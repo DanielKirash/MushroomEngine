@@ -1,0 +1,8 @@
+.log-in-textfield {
+    margin-bottom: 10px;
+    width: 250px;
+    height: 25px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
