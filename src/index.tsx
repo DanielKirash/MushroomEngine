@@ -1,6 +1,5 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Layout from "./pages/Layout";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 
