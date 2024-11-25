@@ -1,5 +1,14 @@
+import Header from "../UI/organisms/header/Header";
+import Main from "../UI/organisms/main/Main";
+import Sidebar from "../UI/organisms/sidebar/Sidebar";
 const Dashboard = () => {
-    return <h1>Dashboard</h1>;
+    return (
+      <div>
+        <Header/>
+        <Main/>
+        <Sidebar/>
+      </div>
+    )
   };
   
   export default Dashboard;
