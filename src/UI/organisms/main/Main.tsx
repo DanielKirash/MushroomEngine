@@ -1,9 +1,12 @@
 import './main.css'
+import Sidebar from '../sidebar/Sidebar';
+import MainSection from '../mainSection/MainSection';
 
 const Main = () => {
     return (
-        <main id="main">
-            <h1>main</h1>
+        <main className="main">
+            <Sidebar/>
+            <MainSection/>
         </main>
     )
   };

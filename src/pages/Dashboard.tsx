@@ -1,12 +1,11 @@
 import Header from "../UI/organisms/header/Header";
 import Main from "../UI/organisms/main/Main";
-import Sidebar from "../UI/organisms/sidebar/Sidebar";
+import '../pages/layout.css'
 const Dashboard = () => {
     return (
-      <div>
+      <div className="dashboard-layout">
         <Header/>
         <Main/>
-        <Sidebar/>
       </div>
     )
   };
