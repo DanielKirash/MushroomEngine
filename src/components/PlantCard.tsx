@@ -13,8 +13,8 @@ const PlantCard = () => {
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat semper purus, aliquam tincidunt nisi ornare eget. Aenean efficitur eu mauris at euismod. Fusce blandit ornare augue, et venenatis turpis porttitor vel. Cras sagittis nibh vel augue tristique, vitae pharetra nunc posuere. Suspendisse congue imperdiet leo at sollicitudin. Sed laoreet vehicula congue. Integer quis lobortis odio. Nam non neque sit amet ante faucibus congue non in dolor. Fusce lectus neque, scelerisque ut semper ornare, varius vitae justo. Proin in iaculis lacus.</p>
                 </div>
                 <div className="plantButton">
-                    <button>Modifica</button>
-                    <button>Elimina</button>
+                    <button className='modifica'>Modifica</button>
+                    <button className='elimina'>Elimina</button>
                 </div>
         </div>
     );
