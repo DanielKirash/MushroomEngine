@@ -1,15 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 
+const isAuthenticated = () => {
+  
+  return localStorage.getItem('sessionStorage');
+};
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Login />} />
+        <Route
+          path="dashboard"
+          element={isAuthenticated() ? <Dashboard /> : <Navigate to="/" />}
+        />
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
+const root = ReactDOM.createRoot(document.getElementById('root')!);
+root.render(<App />);
