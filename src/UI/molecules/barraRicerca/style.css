@@ -1,0 +1,11 @@
+.barra-ricerca  {
+    border:1px solid white;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(128, 128, 128, 0.518);
+    min-width: 600px;
+}
+
+.casella-ricerca    {
+    margin-top: 12px;
+}

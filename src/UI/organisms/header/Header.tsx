@@ -1,4 +1,5 @@
 import './header.css'
+import Light from '../../atoms/luceFunzionamento/Light'
 
 const Header = () => {
     return (

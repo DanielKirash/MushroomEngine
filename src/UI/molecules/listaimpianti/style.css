@@ -1,0 +1,23 @@
+li.item-list {
+    border:1px solid white;
+    border-radius: 10px;
+    display: flex;
+    height: 50px;
+    gap: 3px;
+    justify-content: center;
+    min-width:200px;
+    background-color: rgba(240, 248, 255, 0.543);
+
+}
+
+.light-list {
+    flex: 1;
+    text-align: center;
+    align-content: center;
+
+}
+
+.nome-impianto-list {
+    flex: 2;
+    align-content: center;
+}

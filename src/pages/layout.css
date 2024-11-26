@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 * {
     margin: 0;
 	padding: 0;
@@ -7,13 +9,21 @@
 	vertical-align: baseline;
 }
 
+html	{
+	font-family: "Nunito", sans-serif;
+  	font-optical-sizing: auto;
+  	font-weight: 400;
+  	font-style: normal;
+}
+/*DashBoard layout*/
 .dashboard-layout	{
 	height: 100vh;
     display: flex;
 	flex-direction: column;
     min-height: 100%;
+	background-color: rgb(127, 206, 255);
 }
-
+/*----------*/
 /*LogIn page*/
 .mainContainer{
     height: 100vh;

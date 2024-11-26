@@ -5,6 +5,7 @@ export type TextFieldProps = {
     isRequired?: boolean;
     placeholder?: string;
     error?: string;
+    addClass?:string;
   };
 
   
