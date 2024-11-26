@@ -1,4 +1,23 @@
 #header {
    height: 20vh;
+   width: 100vw;
    display: flex;
+   justify-content: space-between;
+}
+
+.logout-icon {
+   height: 50px;
+   width: 50px;
+   color: rgba(0, 0, 32, 0.728);
+   padding-right: 15px;
+}
+
+.logout-box {
+      width: 80px;
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+      
 }

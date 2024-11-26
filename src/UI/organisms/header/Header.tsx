@@ -1,10 +1,18 @@
 import './header.css'
-import Light from '../../atoms/luceFunzionamento/Light'
+import Logo from '../../atoms/logo/Logo';
+import { RiLogoutCircleRLine } from "react-icons/ri";
+import { IconContext } from 'react-icons';
 
 const Header = () => {
     return (
         <header id="header">
-            <h1>Header</h1>
+            <Logo className='small-size'/>
+            <div className='logout-box'>
+                <IconContext.Provider value={{className:"logout-icon"}}>
+                    <RiLogoutCircleRLine/>
+                </IconContext.Provider>
+                
+            </div>
         </header>
     )
   };

@@ -1,13 +1,12 @@
 import InputField from '../../atoms/inputFields/InputText';
+import Logo from '../../atoms/logo/Logo';
 import './login-card.css';
 
 
 const LoginCard = () => {
     return(
             <div className='login'>
-                <div className='logo'>
-                    <img src={'fungoLogo.png'} alt='Logo'></img>
-                </div>
+                    <Logo className='medium-size'/>
                 <div className='inputField'>
                     <InputField placeholder='Email' id='email'/>
                     <InputField placeholder='Password' id='password'/>
