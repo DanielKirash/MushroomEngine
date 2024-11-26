@@ -1,82 +1,124 @@
-body{
-    background-color: #EAF7FF;
+body {
+    background-color: #f0f4f8;
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 26px;
+    color: black;
 }
-.plantCardContainer{
+
+.plantCardContainer {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    max-width: fit-content;
-    padding: 10px;
     align-items: center;
-    border-radius: 15px;
-    border: 5px solid black;
-    background-color: #AAD7D9;
-}
-
-.plantInfo{
-    display: flex;
-    padding: 10px;
-
-    max-width: fit-content;
-    flex-direction: column;
+    gap: 24px;
     width: 100%;
-    border-radius: 10px;
-    height: 100%;
-    height: 100%;
-    font-size: large;
-    background-color: #92C7CF;
+    max-width: 900px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.plantName{
-    display: flex;
-
-    margin: 10px;
-    width: 100%;
+.plantCardContainer:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
-.plantPosition{
-    display: flex;
-    margin: 10px;
-    width: 100%;
-}
-
-.plantStatus{
-    display: flex;
-    margin: 10px;
-    width: 100%;
-}
-
-.plantButton{
+.plantInfo {
     display: flex;
     flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    padding-right: 20px;
+    border-right: solid 1px #e2e8f0;
 }
 
-.plantDescritpion{
-    max-width: 75%;
+.plantName {
+    font-size: 24px;
+    font-weight: 700;
+    color: black;
 }
 
-button{
-    width: 100px;
-    height: 35px;
-    border-radius: 15px;
-    color: white;
+.plantPosition,
+.plantStatus {
+    font-size: 16px;
+    color: #4a5568;
+}
+
+.plantStatus {
+    font-weight: 600;
+    color: #10b981;
+    background-color: rgba(16, 185, 129, 0.1);
+    padding: 4px 8px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.plantDescription {
+    flex: 2;
     font-size: 15px;
-    font-weight: bold;
+    line-height: 26px;
+    color: #4a5568;
+    opacity: 0.9;
+}
+
+.plantButton {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
     border: none;
     cursor: pointer;
-    box-shadow: -2px 2px 37px -11px rgba();
-    -webkit-box-shadow: -2px 2px 37px -11px rgba();
-    -moz-box-shadow: -2px 2px 37px -11px rgba();
+    transition: all 0.3s ease;
 }
 
-.modifica{
-    background-color: #FFC107;
-    margin-bottom: 5px;
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.elimina{
-    background-color: #DC3545;
-    margin-top: 5px;
+.modifica {
+    background: linear-gradient(145deg, #ffd43b, #fbbf24);
+    box-shadow: 0 5px 15px rgba(251, 191, 36, 0.3);
+}
+
+.elimina {
+    background: linear-gradient(145deg, #ff5656, #ef4444);
+    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+}
+
+@media (max-width: 768px) {
+    .plantCardContainer {
+        flex: 1;
+        flex-direction: column;
+        text-align: center;
+        padding: 24px;
+    }
+    .plantInfo {
+        border-right: none;
+        padding-right: 0;
+        border-bottom: solid 1px #e2e8f0;
+        padding-bottom: 20px;
+
+    }
+    
+    .plantButton {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    button {
+        flex: 1;
+    }
 }

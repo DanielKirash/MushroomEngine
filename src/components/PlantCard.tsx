@@ -1,24 +1,42 @@
 import './plantcard.css';
 
 const PlantCard = () => {
-    
+
+    const handleClick = () => {
+        console.log('Clicked');
+    }
+
+    const handleModify = () => {
+        console.log('Modify');
+    }
+
+    const handleDelete = () => {
+        console.log('Delete');
+    }
+
+
+
+
     return (
-        <div className="plantCardContainer">
+        <div className="plantCardContainer" onClick={handleClick}>
             <div className="plantInfo">
-                <div className='plantName'>Impianto Di Filtraggio</div>
-                <div className='plantPosition'>Capannone A2</div>
-                <div className='plantStatus'>ATTIVO</div>
+                <div className="plantName">Impianto di Filtraggio</div>
+                <div className="plantPosition">Capannone A2</div>
+                <div className="plantStatus">ATTIVO</div>
             </div>
-                <div className="plantDescritpion">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat semper purus, aliquam tincidunt nisi ornare eget. Aenean efficitur eu mauris at euismod. Fusce blandit ornare augue, et venenatis turpis porttitor vel. Cras sagittis nibh vel augue tristique, vitae pharetra nunc posuere. Suspendisse congue imperdiet leo at sollicitudin. Sed laoreet vehicula congue. Integer quis lobortis odio. Nam non neque sit amet ante faucibus congue non in dolor. Fusce lectus neque, scelerisque ut semper ornare, varius vitae justo. Proin in iaculis lacus.</p>
-                </div>
-                <div className="plantButton">
-                    <button className='modifica'>Modifica</button>
-                    <button className='elimina'>Elimina</button>
-                </div>
+            <div className="plantDescription">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                    volutpat semper purus, aliquam tincidunt nisi ornare eget. Aenean
+                    efficitur eu mauris at euismod.
+                </p>
+            </div>
+            <div className="plantButton">
+                <button className="modifica" onClick={handleModify}>MODIFICA</button>
+                <button className="elimina" onClick={handleDelete}>ELIMINA</button>
+            </div>
         </div>
     );
+};
 
-  };
-  
-  export default PlantCard;
+export default PlantCard;
