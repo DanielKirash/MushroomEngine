@@ -1,12 +1,12 @@
 .barra-ricerca  {
     border:1px solid white;
-    border-radius: 0 0 15px 15px;
+    border-radius: 16px;
     display: flex;
     flex-direction: column;
-    
-    background-color: rgba(128, 128, 128, 0.518);
+    background-color: #ffffff;
     min-width: 600px;
     min-height: 90px;
+    transition: all ease-in-out 0.5s;
 }
 .barra-ricerca-hidden{
     height:30px;
@@ -23,15 +23,23 @@
 .open-window    {
     height: 30px;
     display: flex;
+    border-radius: 16px;
     justify-content: center;
-    
-    background-color:  rgba(128, 128, 128, 0.062);;
+    background-color:  #80808010;
 }
 
 .open-arrow {
     width: 50px;
     height: 30px;
-    color: rgba(0, 0, 32, 0.728);
+    color: #000020ba;
+}
+
+
+.open-arrow:hover {
+    cursor: pointer;
+    width: 52px;
+    height: 32px;
+    transition: ease-in 0.5s;
 }
 
 .casella-ricerca    {

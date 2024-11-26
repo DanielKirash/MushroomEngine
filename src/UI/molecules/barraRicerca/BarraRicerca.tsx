@@ -11,6 +11,7 @@ function BarraRicerca(){
     const handleToggle = () => {
         setToggleValue(!toggleValue);
     }
+    
     return(
         <div className={toggleValue? 'barra-ricerca' : 'barra-ricerca-hidden barra-ricerca'}>
             <div className={toggleValue?'box-input' : 'box-input-hidden'}>
@@ -19,7 +20,7 @@ function BarraRicerca(){
             </div>
             <div className='open-window'>
                 <IconContext.Provider value={{className:"open-arrow"}}>
-                {toggleValue?<IoCaretUpOutline onClick={handleToggle}/>:<IoCaretDownOutline onClick={handleToggle}/> }
+                {toggleValue?<IoCaretUpOutline onClick={handleToggle} className='iconArrow'/>:<IoCaretDownOutline onClick={handleToggle} className='iconArrow'/> }
                 </IconContext.Provider>
             </div>
         </div>
