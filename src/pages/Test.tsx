@@ -1,5 +1,6 @@
 import React from 'react';
 import PlantCard from '../components/PlantCard';
+import SearchBar from '../components/SearchBar';
 
 
 const Test = () => {
@@ -7,8 +8,8 @@ const Test = () => {
     return (
 
       <div>
-  
-        <PlantCard />
+        <SearchBar />
+       {/* <PlantCard /> */}
   
       </div>
   
