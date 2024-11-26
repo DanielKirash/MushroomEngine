@@ -1,20 +1,19 @@
 li.item-list {
-    border:1px solid white;
-    border-radius: 10px;
+    border-radius: 16px;
     display: flex;
     height: 50px;
     gap: 3px;
     justify-content: center;
     min-width:200px;
     background-color: rgba(240, 248, 255, 0.543);
-
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
 .light-list {
+    display: flex;
     flex: 1;
-    text-align: center;
-    align-content: center;
-
+    align-items: center;
+    justify-content: center;
 }
 
 .nome-impianto-list {
