@@ -2,8 +2,18 @@
     margin-bottom: 10px;
     width: 250px;
     height: 25px;
-    border-radius: 15px;
-    border: 1px solid #ccc;
+    font-size: 14px;
+    border-radius: 16px;
+    color: #4a5568;
+    border: 1px solid #d1d5db;
     padding: 5px;
     padding-left: 25px;
+    transition: all 0.3s ease-in-out;
+}
+
+.log-in-textfield:hover,
+.log-in-textfield:focus-within {
+    background-color: #f3f4f6;
+    border-color: #5485ee;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
 }
