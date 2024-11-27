@@ -32,6 +32,16 @@ const MainSection = () => {
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         machinary: [
             { plant_id: '1', name: 'Machinery 1' , type: 'Type 1', status: 'In funzione'},
+            { plant_id: '1', name: 'Machinery 2' , type: 'Type 2', status: 'In funzione'},
+            { plant_id: '1', name: 'Machinery 2' , type: 'Type 2', status: 'In funzione'},
+            { plant_id: '1', name: 'Machinery 2' , type: 'Type 2', status: 'In funzione'},
+            { plant_id: '1', name: 'Machinery 2' , type: 'Type 2', status: 'In funzione'},
+            { plant_id: '1', name: 'Machinery 2' , type: 'Type 2', status: 'In funzione'},
+            { plant_id: '1', name: 'Machinery 2' , type: 'Type 2', status: 'In funzione'},
+            { plant_id: '1', name: 'Machinery 2' , type: 'Type 2', status: 'In funzione'},
+            { plant_id: '1', name: 'Machinery 2' , type: 'Type 2', status: 'In funzione'},
+            { plant_id: '1', name: 'Machinery 2' , type: 'Type 2', status: 'In funzione'},
+
         ]
     }
 
@@ -45,7 +55,7 @@ const MainSection = () => {
                 {/* Render all the elemetns from the fetch TODO */}
                 {/* Requires a map for each plantCard so the Modal can safely use the data*/}
                 <div onClick={() => handleCardClick(plantasda)}>
-                <PlantCard {...plantasda}></PlantCard>
+                    <PlantCard {...plantasda}></PlantCard>
                 </div>
 
 
