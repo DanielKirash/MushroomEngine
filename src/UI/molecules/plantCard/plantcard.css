@@ -110,8 +110,5 @@ button:hover {
         flex-direction: row;
         justify-content: center;
     }
-    
-    button {
-        flex: 1;
-    }
+
 }

@@ -1,5 +1,6 @@
 type LogoProps = {
-    className? : string
+    className? : string;
+    fullSize? : boolean;
 }
 
 export default LogoProps;

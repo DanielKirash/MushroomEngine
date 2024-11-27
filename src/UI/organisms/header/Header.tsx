@@ -14,6 +14,10 @@ const Header = () => {
     return (
         <header id="header">
             <Logo className='small-size'/>
+            <div className='box-intestazione'>
+                <img src={'scrittaLogoFungo.png'} alt='Intestazione Azienda' />
+                <p>Benvenuto Utente X</p>
+            </div>
             <div className='logout-box'>
                 <IconContext.Provider value={{className:"logout-icon"}}>
                     <HiOutlineLogout onClick={handleLogOut}/>
