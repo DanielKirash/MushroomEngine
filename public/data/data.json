@@ -1,0 +1,44 @@
+{
+    "impianti":[
+        {
+            "nome": "Fornace",
+            "posizione": "Settore 2.1",
+            "descrizione": "2014-06-25T00:00:00.000Z",
+            "isAllWorking": true,
+            "macchinari": [
+            {
+                "nome": "Cappa",
+                "tipo": "Utile",
+                "descrizione": "Macchinario 3",
+                "stato":"attivo"
+            },
+            {
+                "nome": "Aspirazione",
+                "tipo": "bellissimo",
+                "descrizione": "Macchinario 2",
+                "stato":"attivo"
+            }
+            ]
+        },
+        {
+            "nome": "Generatore",
+            "posizione": "Settore 3.1",
+            "descrizione": "2014-06-25T00:00:00.000Z",
+            "isAllWorking": true,
+            "macchinari": [
+            {
+                "nome": "Drenaggio",
+                "tipo": "Utile",
+                "descrizione": "Macchinario 5",
+                "stato":"attivo"
+            },
+            {
+                "nome": "Ponte Elevatore",
+                "tipo": "bellissimo",
+                "descrizione": "Macchinario 6",
+                "stato":"attivo"
+            }
+            ]
+        }
+]
+}

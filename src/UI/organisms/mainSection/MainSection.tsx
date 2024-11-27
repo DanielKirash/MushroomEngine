@@ -4,11 +4,12 @@ import './main-section.css'
 
 
 const MainSection = () => {
+    const data = localStorage.getItem("impianti");
     return (
         <section className="main-section">
             <BarraRicerca></BarraRicerca>
             <div className='plantContainer'>
-                {/* Render all the elemetns from the fetch TODO */}
+                
                 <PlantCard></PlantCard>
                 <PlantCard></PlantCard>
                 <PlantCard></PlantCard>
