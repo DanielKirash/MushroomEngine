@@ -23,6 +23,14 @@ html	{
     min-height: 90%;
 	background-color: var(--background);
 }
+
+@media (max-width: 768px) {
+	.sidebar	{
+		display: none;
+	}
+
+}
+
 /*----------*/
 /*LogIn page*/
 .mainContainer{

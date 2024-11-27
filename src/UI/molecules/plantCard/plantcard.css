@@ -5,10 +5,9 @@
     flex:1;
     flex-direction: row;
     align-items: center;
-    max-height: 150px;
     gap: 24px;
     padding: 20px;
-    background-color: var(--card-background);
+    background-color: #ffffff;
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
@@ -64,32 +63,6 @@
     gap: 12px;
 }
 
-button {
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--card-background);
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.modifica {
-    background: var(--warning);
-    box-shadow: 0 5px 15px rgba(251, 191, 36, 0.3);
-}
-
-.elimina {
-    background: var(--fatal);
-    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
-}
-
 @media (max-width: 768px) {
     .plantCardContainer {
         flex: 1;
@@ -110,5 +83,5 @@ button:hover {
         flex-direction: row;
         justify-content: center;
     }
-
+    
 }
