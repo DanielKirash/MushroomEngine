@@ -1,44 +1,66 @@
-{
-    "impianti":[
+[
         {
-            "nome": "Fornace",
-            "posizione": "Settore 2.1",
-            "descrizione": "2014-06-25T00:00:00.000Z",
-            "isAllWorking": true,
-            "macchinari": [
+            "id": "213ds",
+            "name":"Fornace",
+            "location": "Settore 2.1",
+            "description": "2014-06-25T00:00:00.000Z",
+            "status": "attivo",
+            "machinary": [
             {
-                "nome": "Cappa",
-                "tipo": "Utile",
-                "descrizione": "Macchinario 3",
-                "stato":"attivo"
+                "plant_id": "tys12",
+                "name": "Cappa",
+                "type": "Utile",
+                "status":"attivo"
             },
             {
-                "nome": "Aspirazione",
-                "tipo": "bellissimo",
-                "descrizione": "Macchinario 2",
-                "stato":"attivo"
+                "plant_id": "tys13",
+                "name": "Cappa",
+                "type": "Utile",
+                "status":"attivo"
             }
             ]
         },
         {
-            "nome": "Generatore",
-            "posizione": "Settore 3.1",
-            "descrizione": "2014-06-25T00:00:00.000Z",
-            "isAllWorking": true,
-            "macchinari": [
-            {
-                "nome": "Drenaggio",
-                "tipo": "Utile",
-                "descrizione": "Macchinario 5",
-                "stato":"attivo"
-            },
-            {
-                "nome": "Ponte Elevatore",
-                "tipo": "bellissimo",
-                "descrizione": "Macchinario 6",
-                "stato":"attivo"
-            }
-            ]
+            "id": "213sfdgsdds",
+            "name":"Forndsvdsace",
+            "location": "Settoxdvre 2.1",
+            "description": "2014xvcd-06-25T00:00:00.000Z",
+            "status": "attivo",
+            "machinary": [
+                {
+                    "plant_id": "tys12",
+                    "name": "Cappa",
+                    "type": "Utile",
+                    "status":"attivo"
+                },
+                {
+                    "plant_id": "tys13",
+                    "name": "Cappa",
+                    "type": "Utile",
+                    "status":"attivo"
+                }
+                ]
+        },
+        {
+            "id": "435dfgvdf",
+            "name":"Aspiratore",
+            "location": "Aspriratoree 2.1",
+            "description": "2014xvcd-06-25T00:00:00.000Z",
+            "status": "attivo",
+            "machinary": [
+                {
+                    "plant_id": "tys12",
+                    "name": "Cappa",
+                    "type": "Utile",
+                    "status":"attivo"
+                },
+                {
+                    "plant_id": "tys13",
+                    "name": "Cappa",
+                    "type": "Utile",
+                    "status":"attivo"
+                }
+                ]
         }
+    
 ]
-}

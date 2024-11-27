@@ -4,13 +4,13 @@ import Main from "../UI/organisms/main/Main";
 import '../pages/layout.css'
 
 async function getData(){
-
+  
   const cachedData = localStorage.getItem('impianti');
   if (cachedData) {
       console.log('Using cached data');
       return JSON.parse(cachedData);
   }
-
+  // CONTROLLARE I DATI FETCHATI QUI!!!!!!!!!!!!!
   const response = await fetch('./data/data.json');
   const data = await response.json();
 
@@ -21,8 +21,9 @@ async function getData(){
 
 
 const Dashboard = () => {
-  
+
   useEffect(()=>{
+    
     getData()
   },[])
 

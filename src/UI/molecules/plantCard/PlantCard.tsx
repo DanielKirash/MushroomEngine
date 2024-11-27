@@ -5,10 +5,10 @@ import Modal from '../modal/Modal';
 import './plantcard.css';
 
 const PlantCard = (plant: PlantType) => {
-
+    
 
     return (        
-        <div className="plantCardContainer">
+        <div className="plantCardContainer" >
             <div className="plantInfo">
                 <div className="plantName">{plant.name}</div>
                 <div className="plantPosition">{plant.location}</div>
