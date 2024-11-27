@@ -1,6 +1,6 @@
 import './header.css'
 import Logo from '../../atoms/logo/Logo';
-import { RiLogoutCircleRLine } from "react-icons/ri";
+import { HiOutlineLogout } from "react-icons/hi";
 import { IconContext } from 'react-icons';
 
 const Header = () => {
@@ -16,7 +16,7 @@ const Header = () => {
             <Logo className='small-size'/>
             <div className='logout-box'>
                 <IconContext.Provider value={{className:"logout-icon"}}>
-                    <RiLogoutCircleRLine onClick={handleLogOut}/>
+                    <HiOutlineLogout onClick={handleLogOut}/>
                 </IconContext.Provider>
                 
             </div>

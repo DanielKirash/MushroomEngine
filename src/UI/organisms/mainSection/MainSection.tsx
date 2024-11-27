@@ -8,6 +8,7 @@ const MainSection = () => {
         <section className="main-section">
             <BarraRicerca></BarraRicerca>
             <div className='plantContainer'>
+                {/* Render all the elemetns from the fetch TODO */}
                 <PlantCard></PlantCard>
                 <PlantCard></PlantCard>
                 <PlantCard></PlantCard>

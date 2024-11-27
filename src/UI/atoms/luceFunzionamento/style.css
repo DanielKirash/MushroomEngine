@@ -4,13 +4,13 @@
 }
 
 .green-light    {
-    color:green;
+    color:var(--success);
 }
 
 .red-light  {
-    color:red;
+    color:var(--fatal);
 }
 
 .orange-light   {
-    color: orange;
+    color: var(--warning);
 }

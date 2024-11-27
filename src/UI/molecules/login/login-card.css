@@ -1,3 +1,5 @@
+
+
 .login{
     display: flex;
     flex-direction: column;
@@ -5,7 +7,7 @@
     align-items: center;
     border-radius: 25px;
     padding: 20px;
-    background-color: #F5FAF1;
+    background-color: var(--login);
     box-shadow: -2px 2px 37px 1px rgba(0,0,0,0.75);
     -webkit-box-shadow: -2px 2px 37px 1px rgba(0,0,0,0.75);
     -moz-box-shadow: -2px 2px 37px 1px rgba(0,0,0,0.75);;
@@ -21,7 +23,7 @@
     width: 100px;
     height: 35px;
     border-radius: 15px;
-    background-color: #4CAF50;
+    background-color: var(--success);
     color: white;
     font-size: 15px;
     font-weight: bold;

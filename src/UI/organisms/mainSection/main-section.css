@@ -6,3 +6,8 @@
     gap: 10px;
 }
 
+.plantContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
