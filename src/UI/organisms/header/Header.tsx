@@ -22,7 +22,6 @@ const Header = () => {
                 <IconContext.Provider value={{className:"logout-icon"}}>
                     <HiOutlineLogout onClick={handleLogOut}/>
                 </IconContext.Provider>
-                
             </div>
         </header>
     )
