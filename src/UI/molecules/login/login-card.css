@@ -1,47 +1,91 @@
-
-
-.login{
+.login {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 25px;
-    padding: 20px;
+    padding: 40px;
     background-color: var(--login);
-    box-shadow: -2px 2px 37px 1px rgba(0,0,0,0.75);
-    -webkit-box-shadow: -2px 2px 37px 1px rgba(0,0,0,0.75);
-    -moz-box-shadow: -2px 2px 37px 1px rgba(0,0,0,0.75);;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(10px);
 }
 
-.inputField{
+.login:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.inputField {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
 }
 
+.inputField input {
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: 2px solid gray transparent;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
 
-.loginButton{
-    width: 100px;
-    height: 35px;
-    border-radius: 15px;
+.inputField input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.1);
+}
+
+.loginButton {
+    width: 130px;
+    height: 45px;
+    border-radius: 25px;
     background-color: var(--success);
     color: white;
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 600;
     border: none;
     cursor: pointer;
-    margin-top: 10px;
-    box-shadow: -2px 2px 37px -11px rgba(69,160,73,0.75);
-    -webkit-box-shadow: -2px 2px 37px -11px rgba(69,160,73,0.75);
-    -moz-box-shadow: -2px 2px 37px -11px rgba(69,160,73,0.75);
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(69, 160, 73, 0.3);
+    transition: all 0.3s ease;
 }
 
-.loginButton:hover{
+.loginButton:hover {
     background-color: #45a049;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(69, 160, 73, 0.4);
 }
 
-::placeholder{
-    padding-left: 10px;
+.loginButton:active {
+    transform: translateY(1px);
 }
 
+::placeholder {
+    color: rgba(170, 170, 170, 0.8);
+}
 
+.iconAndInput {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+}
 
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-right: 12px;
+    font-size: 24px;
+    color: var(--primary);
+    transition: transform 0.3s ease;
+}
+
+.iconAndInput:hover .icon {
+    transform: scale(1.1);
+}
