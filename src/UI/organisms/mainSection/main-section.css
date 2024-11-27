@@ -6,10 +6,3 @@
     gap: 10px;
 }
 
-.plantContainer{
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
-    
-
-}

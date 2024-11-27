@@ -17,10 +17,9 @@ html	{
 }
 /*DashBoard layout*/
 .dashboard-layout	{
-	height: 100vh;
     display: flex;
 	flex-direction: column;
-    min-height: 100%;
+    min-height: 90%;
 	background-color: rgb(127, 206, 255);
 }
 /*----------*/
