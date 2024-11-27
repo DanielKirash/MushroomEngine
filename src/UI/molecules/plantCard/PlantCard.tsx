@@ -1,20 +1,22 @@
+import { useState } from 'react';
+import { PlantType } from '../../../types/PlantType';
 import ButtonCrud from '../../atoms/buttons/ButtonCrud';
+import Modal from '../modal/Modal';
 import './plantcard.css';
 
-const PlantCard = () => {
+const PlantCard = (plant: PlantType) => {
 
-    return (
+
+    return (        
         <div className="plantCardContainer">
             <div className="plantInfo">
-                <div className="plantName">Impianto di Filtraggio</div>
-                <div className="plantPosition">Capannone A2</div>
-                <div className="plantStatus">ATTIVO</div>
+                <div className="plantName">{plant.name}</div>
+                <div className="plantPosition">{plant.location}</div>
+                <div className="plantStatus">{plant.status}</div>
             </div>
             <div className="plantDescription">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                    volutpat semper purus, aliquam tincidunt nisi ornare eget. Aenean
-                    efficitur eu mauris at euismod.
+                    {plant.description}
                 </p>
             </div>
             <div className="plantButton">
