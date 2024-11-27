@@ -64,31 +64,7 @@
     gap: 12px;
 }
 
-button {
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
 
-button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.modifica {
-    background: linear-gradient(145deg, #ffd43b, #fbbf24);
-    box-shadow: 0 5px 15px rgba(251, 191, 36, 0.3);
-}
-
-.elimina {
-    background: linear-gradient(145deg, #ff5656, #ef4444);
-    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
-}
 
 @media (max-width: 768px) {
     .plantCardContainer {
@@ -110,8 +86,5 @@ button:hover {
         flex-direction: row;
         justify-content: center;
     }
-    
-    button {
-        flex: 1;
-    }
+
 }

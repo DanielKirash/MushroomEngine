@@ -1,24 +1,10 @@
+import ButtonCrud from '../../atoms/buttons/ButtonCrud';
 import './plantcard.css';
 
 const PlantCard = () => {
 
-    const handleClick = () => {
-        console.log('Clicked');
-    }
-
-    const handleModify = () => {
-        console.log('Modify');
-    }
-
-    const handleDelete = () => {
-        console.log('Delete');
-    }
-
-
-
-
     return (
-        <div className="plantCardContainer" onClick={handleClick}>
+        <div className="plantCardContainer">
             <div className="plantInfo">
                 <div className="plantName">Impianto di Filtraggio</div>
                 <div className="plantPosition">Capannone A2</div>
@@ -32,8 +18,8 @@ const PlantCard = () => {
                 </p>
             </div>
             <div className="plantButton">
-                <button className="modifica" onClick={handleModify}>MODIFICA</button>
-                <button className="elimina" onClick={handleDelete}>ELIMINA</button>
+                <ButtonCrud funzioneBtn='modifica'/>
+                <ButtonCrud funzioneBtn='elimina'/>
             </div>
         </div>
     );

@@ -22,3 +22,7 @@
       cursor: pointer;
       
 }
+
+.box-intestazione {
+      flex: 2;
+}   

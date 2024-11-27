@@ -5,7 +5,7 @@ const Logo = ({className} : LogoProps) => {
 
     return(
         <div>
-            <img src={'fungoLogo.png'} alt='Logo' className={className}></img>
+            <img src={'ImmagineLogoFungo.png'} alt='Logo' className={className}></img>
         </div>
     )
 }
