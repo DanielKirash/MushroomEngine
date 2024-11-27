@@ -14,10 +14,11 @@
 
 .logout-box {
       width: 80px;
-      
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       align-items: flex-end;
+      align-self: center;
+      cursor: pointer;
       
 }

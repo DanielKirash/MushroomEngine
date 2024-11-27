@@ -18,7 +18,7 @@ function BarraRicerca(){
                 <InputField placeholder='Cerca Impianto...' id="searchImpianto" addClass='casella-ricerca'></InputField>
                 <InputField placeholder='Cerca Macchinario...' id="searchMacchinario" addClass='casella-ricerca'></InputField>
             </div>
-            <div className='open-window'>
+            <div className='open-window' onClick={handleToggle}>
                 <IconContext.Provider value={{className:"open-arrow"}}>
                 {toggleValue?<IoCaretUpOutline onClick={handleToggle} className='iconArrow'/>:<IoCaretDownOutline onClick={handleToggle} className='iconArrow'/> }
                 </IconContext.Provider>

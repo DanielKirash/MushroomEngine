@@ -4,12 +4,19 @@ import { RiLogoutCircleRLine } from "react-icons/ri";
 import { IconContext } from 'react-icons';
 
 const Header = () => {
+
+    const handleLogOut = () => {
+        localStorage.clear();
+        //REDIRECT TO LOGIN PAGE
+        //TODO
+    }
+
     return (
         <header id="header">
             <Logo className='small-size'/>
             <div className='logout-box'>
                 <IconContext.Provider value={{className:"logout-icon"}}>
-                    <RiLogoutCircleRLine/>
+                    <RiLogoutCircleRLine onClick={handleLogOut}/>
                 </IconContext.Provider>
                 
             </div>
