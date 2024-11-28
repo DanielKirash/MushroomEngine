@@ -4,6 +4,7 @@ import InputField from "../../../atoms/inputFields/InputText";
 import MachinaryCard from "../../machinaryCard/MarchinaryCard";
 import './modalcontentmachinary.css';
 import { checkStatus } from "../../../../services/utils";
+import { FaSave, FaTimes } from "react-icons/fa";
 
 const ModalContentMachinary = (plant: PlantType) => {
 
