@@ -4,25 +4,39 @@ import { FaUser } from "react-icons/fa";
 import { MdOutlinePassword } from "react-icons/md"
 import './login-card.css';
 import { useState } from 'react';
+import { login } from '../../../services/authService';
 
 
 
 const LoginCard = () => {
 
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    let data = undefined;
 
-    const handleEmailInput = (e: any) => {
-        setEmail(e.target.value);
-        console.log(email);
+    const handleUsernameInput = (e: any) => {
+        setUsername(e.target.value);
+        console.log(username);
     }
 
     const handlePasswordInput = (e: any) => {
         setPassword(e.target.value);
     }
 
-    function handleLogin(email: string, password: string): void {
-        throw new Error('Function not implemented.');
+    async function handleLogin(username: string, password: string): Promise<void> {
+        console.log('mushroom')
+        data = await login(username, password);
+        console.log(data);
+        if(data.message){
+            if(data.message == 'Utente autenticato con successo') {
+                localStorage.setItem('sessionStorage', 'true');
+                window.location.href = '/dashboard';
+            } else {
+                alert('Credenziali errate');
+            }
+        } else {
+            alert('Credenziali errate');
+        }
     }
 
     return(
@@ -30,14 +44,14 @@ const LoginCard = () => {
                     <LogoFull className='medium-size'/>
                 <div className='inputField'>
                     <div className='iconAndInput'>
-                        <FaUser className='icon'/><InputField placeholder='Username' id='email' onChange={handleEmailInput}/>
+                        <FaUser className='icon'/><InputField placeholder='Username' id='username' onChange={handleUsernameInput}/>
                     </div>
 
                     <div className='iconAndInput'>
                         <MdOutlinePassword className='icon'/><InputField placeholder='Password' id='password' onChange={handlePasswordInput}/>
                     </div>
                 </div>
-                <button className='loginButton' onClick={() => handleLogin(email, password)}>Login</button>
+                <button className='loginButton' onClick={() => handleLogin(username, password)}>Login</button>
             </div>
     )
         

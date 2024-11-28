@@ -1,20 +1,25 @@
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import './pages/layout.css'
+import { useEffect, useState } from "react";
 
-const isAuthenticated = () => {
-  
-  return localStorage.getItem('sessionStorage');
-};
+
 
 export default function App() {
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    setIsAuthenticated(!!localStorage.getItem('sessionStorage'));
+  }, [])
+
   return (
     <BrowserRouter>
       <Routes>
-          <Route index element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/" element={isAuthenticated ? <Navigate to="/dashboard" /> : <Login />} />
+        <Route path="/dashboard" element={isAuthenticated ? <Dashboard setIsAuthenticated={setIsAuthenticated}/> : <Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
   );

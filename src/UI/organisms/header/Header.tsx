@@ -3,11 +3,13 @@ import Logo from '../../atoms/logo/Logo';
 import { HiOutlineLogout } from "react-icons/hi";
 import { IconContext } from 'react-icons';
 import { useNavigate } from 'react-router-dom';
+import { DashboardProps } from '../../../pages/Dashboard';
 
-const Header = () => {
+const Header = (setIsAuthenticated: DashboardProps) => {
     const navigate = useNavigate();
 
     const handleLogOut = () => {
+        setIsAuthenticated.setIsAuthenticated(false);
         localStorage.clear();
         navigate('/');
     };

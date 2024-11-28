@@ -3,8 +3,11 @@ import Header from "../UI/organisms/header/Header";
 import Main from "../UI/organisms/main/Main";
 import '../pages/layout.css'
 
+export type DashboardProps = {
+  setIsAuthenticated: (value: boolean) => void;
+}
 
-const Dashboard = () => {
+const Dashboard = (setIsAuthenticated: DashboardProps) => {
   
   const[impianti, setImpianti] = useState<any>([]);
 
@@ -31,7 +34,7 @@ const Dashboard = () => {
 
     return (
       <div className="dashboard-layout">
-        <Header/>
+        <Header {...setIsAuthenticated}/>
         <Main/>
       </div>
     )
