@@ -13,7 +13,7 @@
 
 .log-in-textfield:hover,
 .log-in-textfield:focus-within {
-    background-color: #f3f4f6;
-    border-color: #5485ee;
-    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+    outline: none;
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
 }

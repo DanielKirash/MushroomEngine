@@ -75,6 +75,157 @@
     overflow: auto;
 }
 
+
+.edit-mode-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.modal-header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.edit-mode-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.edit-mode-title .label {
+    font-size: 24px;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.edit-mode-input {
+    font-size: 28px;
+    font-weight: 700;
+    border: 1px solid #e2e8f0;
+    padding: 8px 12px;
+
+}
+
+.edit-mode-input-position {
+    font-weight: 600;
+    border: 1px solid #e2e8f0;
+    padding: 8px 12px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.icon-button.save {
+    color: #38a169;
+}
+
+.icon-button.cancel {
+    color: #e53e3e;
+}
+
+.icon-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.edit-mode-description {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.edit-mode-description .labelDesc {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.edit-mode-textarea {
+    width: 100%;
+    min-height: 100px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 16px;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+.edit-mode-textarea:focus {
+    outline: none;
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+
+.modal-header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.edit-mode-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    gap: 8px;
+}
+
+.icon-button.save {
+    background-color: #38a169;
+    color: white;
+    border: 2px solid #38a169;
+}
+
+.icon-button.cancel {
+    background-color: white;
+    color: #e53e3e;
+    border: 2px solid #e53e3e;
+}
+
+.icon-button.save:hover {
+    background-color: #2f855a;
+    border-color: #2f855a;
+}
+
+.icon-button.cancel:hover {
+    background-color: rgba(229, 62, 62, 0.1);
+}
+
+.icon-button svg {
+    margin-right: 8px;
+}
+
 .online {background-color: rgba(0, 255, 42, 0.2)}
 .offline{background-color: rgba(255, 0, 0, 0.2)}
 .warning{background-color: rgba(255, 136, 0, 0.2)}
