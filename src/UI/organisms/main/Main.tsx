@@ -1,12 +1,15 @@
 import './main.css'
 import Sidebar from '../sidebar/Sidebar';
 import MainSection from '../mainSection/MainSection';
+import { MainProps } from '../../../types/MainProps';
 
-const Main = () => {
+
+
+const Main = ({data} : MainProps ) => {
     return (
         <main className="main">
-            <Sidebar/>
-            <MainSection/>
+            <Sidebar data={data}/>
+            <MainSection data={data}/>
         </main>
     )
   };

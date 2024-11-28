@@ -5,13 +5,14 @@ import PlantCard from '../../molecules/plantCard/PlantCard';
 import './main-section.css'
 import { PlantType } from '../../../types/PlantType';
 import ModalContentMachinary from '../../molecules/modal/modalContent/ModalContentMachinary';
+import { MainProps } from '../../../types/MainProps';
 
 
 
 
-const MainSection = () => {
-    const data = localStorage.getItem("impianti");
-    const impianti = data && JSON.parse(data);
+const MainSection = ({data} : MainProps) => {
+    
+    const impianti = data 
     const [showModal, setShowModal] = useState(false);
     const [selectedPlant, setSelectedPlant] = useState<PlantType | null>(null)
 
@@ -23,9 +24,7 @@ const MainSection = () => {
         setSelectedPlant(plant);
         setShowModal(true);
     }
-    if(data){
-        console.log(JSON.parse(data))
-    }
+    
     
     return (
         <section className="main-section">
@@ -34,14 +33,16 @@ const MainSection = () => {
                 <ModalContentMachinary {...selectedPlant}/>
             </Modal>
             <div className='plantContainer'>
-            {impianti.map( (impianto: PlantType) => (
+            {impianti && impianti.map( (impianto: PlantType) => (
                 <div onClick={()=>handleCardClick(impianto)}>
                     <PlantCard {...impianto}/>
                 </div>
-                ))}
+                ))} 
             </div>
         </section>
     )
   };
   
   export default MainSection;
+
+  /**/
