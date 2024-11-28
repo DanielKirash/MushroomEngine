@@ -66,6 +66,9 @@ const MainSection = () => {
                 <PlantCard id = {3} name={plantasda.name} location={plantasda.location} status={plantasda.status} description={plantasda.description}></PlantCard>
                 <PlantCard id = {4} name={plantasda.name} location={plantasda.location} status={plantasda.status} description={plantasda.description}></PlantCard>
                 <PlantCard id = {5} name={plantasda.name} location={plantasda.location} status={plantasda.status} description={plantasda.description}></PlantCard>
+                <PlantCard id = {5} name={plantasda.name} location={plantasda.location} status={plantasda.status} description={plantasda.description}></PlantCard>
+                <PlantCard id = {5} name={plantasda.name} location={plantasda.location} status={plantasda.status} description={plantasda.description}></PlantCard>
+                <PlantCard id = {5} name={plantasda.name} location={plantasda.location} status={plantasda.status} description={plantasda.description}></PlantCard>
                 
             </div>
         </section>

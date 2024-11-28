@@ -8,11 +8,11 @@ const ModalContentMachinary = (plant: PlantType) => {
             <header className="modal-header">
                 <h1 className="modal-title">
                     <span className="label">Impianto:</span> 
-                    <span className="value">{plant.name}</span>
+                    <span className="value"> {plant.name}</span>
                 </h1>
                 <div className="modal-info">
                     <h2 className="info-item">
-                        <span className="label">Descrizione:</span>
+                        <span className="labelDesc">Descrizione:</span>
                         <span className="value">{plant.description}</span>
                     </h2>
                     <h2 className="info-item">

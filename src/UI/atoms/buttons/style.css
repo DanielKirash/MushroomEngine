@@ -17,12 +17,12 @@ button:hover {
 }
 
 .modifica {
-    background: linear-gradient(145deg, #ffd43b, #fbbf24);
+    background: #F6AD55;
     box-shadow: 0 5px 15px rgba(251, 191, 36, 0.3);
 }
 
 .elimina {
-    background: linear-gradient(145deg, #ff5656, #ef4444);
+    background: #FC8181;
     box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
 }
 
