@@ -1,10 +1,11 @@
+import { usePlants } from '../../../contexts/PlantContext';
 import { MainProps } from '../../../types/MainProps';
 import { PlantType } from '../../../types/PlantType';
 import ImpiantoLeft from '../../molecules/listaimpianti/ImpiantoLeft';
 import './style.css'
 
-const ListaImpianti = ({data} : MainProps) =>{
-    const impianti = data ;
+const ListaImpianti = () =>{
+    const {impianti} = usePlants();
 
     return(
         <ul className='lista-impianti-left'>
@@ -18,5 +19,3 @@ const ListaImpianti = ({data} : MainProps) =>{
 }
 
 export default ListaImpianti;
-
-/**/ 

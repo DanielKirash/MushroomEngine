@@ -2,11 +2,11 @@ import './sidebar.css'
 import ListaImpianti from '../listaImpianti/ListaImpianti';
 import { MainProps } from '../../../types/MainProps';
 
-const Sidebar = ({data} : MainProps) => {
+const Sidebar = () => {
     return (
         <nav className="sidebar">
             
-            <ListaImpianti data={data}/>
+            <ListaImpianti />
         </nav>
     )
   };

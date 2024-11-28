@@ -25,7 +25,7 @@ const Dashboard = (setIsAuthenticated: DashboardProps) => {
     return (
       <div className="dashboard-layout">
         <Header {...setIsAuthenticated}/>
-        <Main data={data}/>
+        <Main/>
       </div>
     )
   };

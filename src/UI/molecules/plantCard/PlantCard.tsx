@@ -3,7 +3,7 @@ import { PlantType } from '../../../types/PlantType';
 import ButtonCrud from '../../atoms/buttons/ButtonCrud';
 import Modal from '../modal/Modal';
 import './plantcard.css';
-import { checkStatus } from '../../../services/utils';
+import { checkStatus } from '../../../utils/utils';
 
 
 const PlantCard = (plant: PlantType) => {

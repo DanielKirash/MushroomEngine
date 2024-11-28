@@ -3,31 +3,32 @@ import { PlantType } from "../../../../types/PlantType";
 import InputField from "../../../atoms/inputFields/InputText";
 import MachinaryCard from "../../machinaryCard/MarchinaryCard";
 import './modalcontentmachinary.css';
-import { checkStatus } from "../../../../services/utils";
+import { checkStatus } from "../../../../utils/utils";
 import { FaSave, FaTimes } from "react-icons/fa";
+import { usePlants } from "../../../../contexts/PlantContext";
 
 const ModalContentMachinary = (plant: PlantType) => {
-
    
+    const { updatePlant } = usePlants();
+
     const [editedPlant, setEditedPlant] = useState({
+        _id: plant?._id,
         name: plant?.name ,
-        description: plant?.description ,
         location: plant?.location ,
-        status: plant?.status 
+        description: plant?.description ,
     });
 
     // Aggiorna lo stato quando cambiano i props
     useEffect(() => {
         if (plant) {
             setEditedPlant({
+                _id: plant._id,
                 name: plant.name,
-                description: plant.description,
                 location: plant.location,
-                status: plant.status
+                description: plant.description,
             });
         }
     }, [plant]);
-    
 
     const handleChange = (field: string, value: string) => {
         setEditedPlant(prev => ({
@@ -37,26 +38,20 @@ const ModalContentMachinary = (plant: PlantType) => {
     };
 
     const handleSave = async () => {
-        let impiantiString = await localStorage.getItem('impianti')
-        if(impiantiString) {
-            const impianti = JSON.parse(impiantiString) as PlantType[];
+        await updatePlant(editedPlant);
+        plant.handleClose && plant.handleClose();
+        plant.setEditMode && plant.setEditMode(false);
 
-            impianti.map((impianto, index) => {
-                if(impianto.id === plant.id) {
-                    impianti[index] = editedPlant;
-                }
-            }, [])
-            
-        }
-        console.log('Saving:', editedPlant);
-    };
+        
+
+      };
 
     const handleCancel = () => {
         setEditedPlant({
+            _id: plant._id,
             name: plant.name,
-            description: plant.description,
             location: plant.location,
-            status: plant.status
+            description: plant.description,
         });
     };
 

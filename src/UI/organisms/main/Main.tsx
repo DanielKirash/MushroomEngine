@@ -2,14 +2,18 @@ import './main.css'
 import Sidebar from '../sidebar/Sidebar';
 import MainSection from '../mainSection/MainSection';
 import { MainProps } from '../../../types/MainProps';
+import { PlantProvider } from '../../../contexts/PlantContext';
 
 
 
-const Main = ({data} : MainProps ) => {
+
+const Main = () => {
     return (
         <main className="main">
-            <Sidebar data={data}/>
-            <MainSection data={data}/>
+            <PlantProvider>
+                <Sidebar />
+                <MainSection/>
+            </PlantProvider>
         </main>
     )
   };
