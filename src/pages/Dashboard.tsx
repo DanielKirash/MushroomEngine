@@ -3,27 +3,28 @@ import Header from "../UI/organisms/header/Header";
 import Main from "../UI/organisms/main/Main";
 import '../pages/layout.css'
 
-const Dashboard = () => {
-  const [data, setData] = useState<any>(null)
-  useEffect(() => {
-    fetchData()
-  }, [])
+export type DashboardProps = {
+  setIsAuthenticated: (value: boolean) => void;
+}
 
-
+const Dashboard = (setIsAuthenticated: DashboardProps) => {
   async function fetchData(){
-    
-    const response = await fetch('http://127.0.0.1:8000/impianti');
+
+    const response = await fetch('./data/data.json');
     const data = await response.json();
   
     localStorage.setItem('impianti', JSON.stringify(data));
-    
-    setData(data)
-
+  
+    return data;
   }
+  const [data, setData] = useState<any>(null)
+  useEffect(()=>{
+    fetchData()
+  },[])
 
     return (
       <div className="dashboard-layout">
-        <Header/>
+        <Header {...setIsAuthenticated}/>
         <Main data={data}/>
       </div>
     )

@@ -20,8 +20,8 @@ const PlantCard = (plant: PlantType) => {
                 </p>
             </div>
             <div className="plantButton">
-                <ButtonCrud funzioneBtn='modifica'/>
-                <ButtonCrud funzioneBtn='elimina'/>
+                <ButtonCrud funzioneBtn='modifica' testo='MODIFICA'/>
+                <ButtonCrud funzioneBtn='elimina' testo='ELIMINA'/>
             </div>
         </div>
     );

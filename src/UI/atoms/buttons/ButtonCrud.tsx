@@ -1,7 +1,7 @@
 import './style.css'
 import { ButtonCrudProps } from './ButtonsTypes';
 
-const ButtonCrud = ({ funzioneBtn }:ButtonCrudProps) => {
+const ButtonCrud = ({ funzioneBtn, testo }:ButtonCrudProps) => {
     
 
     const handleModify = () => {
@@ -21,11 +21,17 @@ const ButtonCrud = ({ funzioneBtn }:ButtonCrudProps) => {
             case 'elimina':
                 handleDelete();
                 break;
+            case 'modificaMachinary':
+                handleModify();
+                break;
+            case 'eliminaMachinary':
+                handleDelete();
+                break;
         }
     }
     
     return (
-        <button className={funzioneBtn} onClick={handleFunction}>{funzioneBtn?.toLocaleUpperCase()}</button>
+        <button className={funzioneBtn} onClick={handleFunction}>{testo}</button>
     )
 }
 

@@ -1,21 +1,38 @@
-import { PlantType } from "../../../../types/PlantType"
+import { PlantType } from "../../../../types/PlantType";
+import MachinaryCard from "../../machinaryCard/MarchinaryCard";
+import './modalcontentmachinary.css';
 
 const ModalContentMachinary = (plant: PlantType) => {
-
-    return(
-        <div>
-            <h1>Impianto: {plant.name}</h1>
-            <h2>Descrizione: {plant.description}</h2>
-            <h2>Stato: {plant.status}</h2>
-            <h1>Macchinari:</h1>
-            <ul>
-                {plant.machinary?.map((machinaryItem, index) => (
-                    <li key={index}>{machinaryItem.name}</li>
-                ))}
-            </ul>
+    return (
+        <div className="modal-content-wrapper">
+            <header className="modal-header">
+                <h1 className="modal-title">
+                    <span className="label">Impianto:</span> 
+                    <span className="value"> {plant.name}</span>
+                </h1>
+                <div className="modal-info">
+                    <h2 className="info-item">
+                        <span className="labelDesc">Descrizione:</span>
+                        <span className="value">{plant.description}</span>
+                    </h2>
+                    <h2 className="info-item">
+                        <span className="label">Stato:</span>
+                        <span className="status-badge">{plant.status}</span>
+                    </h2>
+                </div>
+            </header>
+            <section className="machinery-section">
+                <h1 className="section-title">Macchinari</h1>
+                <div className="machinaryContainer">
+                    {plant.machinary?.map((machinaryItem, index) => (
+                        <div key={index} className="machinary">
+                            <MachinaryCard machinaryItem={machinaryItem} />
+                        </div>
+                    ))}
+                </div>
+            </section>
         </div>
+    );
+};
 
-    )
-}
-
-export default ModalContentMachinary
+export default ModalContentMachinary;

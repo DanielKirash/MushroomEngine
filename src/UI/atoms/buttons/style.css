@@ -1,9 +1,6 @@
 
-
 button {
-    padding: 10px 20px;
     border-radius: 10px;
-    font-size: 14px;
     font-weight: 600;
     color: #ffffff;
     border: none;
@@ -17,13 +14,31 @@ button:hover {
 }
 
 .modifica {
-    background: linear-gradient(145deg, #ffd43b, #fbbf24);
+    background: #F6AD55;
+    padding: 10px 20px;
     box-shadow: 0 5px 15px rgba(251, 191, 36, 0.3);
+    font-size: 14px;
 }
 
 .elimina {
-    background: linear-gradient(145deg, #ff5656, #ef4444);
+    background: #FC8181;
+    padding: 10px 20px;
     box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+    font-size: 14px;
+}
+
+.modificaMachinary {
+    background: #F6AD55;
+    padding: 5px 10px;
+    box-shadow: 0 5px 15px rgba(251, 191, 36, 0.3);
+    font-size: 12px;
+}
+
+.eliminaMachinary {
+    background: #FC8181;
+    padding: 5px 10px;
+    box-shadow: 0 5px 15px rgba(251, 191, 36, 0.3);
+    font-size: 12px;
 }
 
 @media (max-width: 768px) {

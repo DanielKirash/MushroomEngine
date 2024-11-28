@@ -6,5 +6,7 @@
     margin-bottom: 10px;
     margin-right: 10px;
     background-color: var(--card-background);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 
 }
