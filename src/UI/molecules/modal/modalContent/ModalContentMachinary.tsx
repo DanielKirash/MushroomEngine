@@ -7,13 +7,25 @@ import { FaSave, FaTimes } from 'react-icons/fa';
 
 const ModalContentMachinary = (plant: PlantType) => {
 
+   
     const [editedPlant, setEditedPlant] = useState({
-        name: plant.name,
-        description: plant.description,
-        location: plant.location,
-        status: plant.status
+        name: plant?.name ,
+        description: plant?.description ,
+        location: plant?.location ,
+        status: plant?.status 
     });
 
+    // Aggiorna lo stato quando cambiano i props
+    useEffect(() => {
+        if (plant) {
+            setEditedPlant({
+                name: plant.name,
+                description: plant.description,
+                location: plant.location,
+                status: plant.status
+            });
+        }
+    }, [plant]);
     
 
     const handleChange = (field: string, value: string) => {
@@ -23,8 +35,18 @@ const ModalContentMachinary = (plant: PlantType) => {
         }));
     };
 
-    const handleSave = () => {
-        //Logica per il salvataggio
+    const handleSave = async () => {
+        let impiantiString = await localStorage.getItem('impianti')
+        if(impiantiString) {
+            const impianti = JSON.parse(impiantiString) as PlantType[];
+
+            impianti.map((impianto, index) => {
+                if(impianto.id === plant.id) {
+                    impianti[index] = editedPlant;
+                }
+            }, [])
+            
+        }
         console.log('Saving:', editedPlant);
     };
 
