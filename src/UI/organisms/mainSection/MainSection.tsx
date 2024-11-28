@@ -39,8 +39,6 @@ const MainSection = () => {
             { plant_id: '1', name: 'Machinery 2' , type: 'Type 2', status: 'In funzione'},
             { plant_id: '1', name: 'Machinery 2' , type: 'Type 2', status: 'In funzione'},
             { plant_id: '1', name: 'Machinery 2' , type: 'Type 2', status: 'In funzione'},
-            { plant_id: '1', name: 'Machinery 2' , type: 'Type 2', status: 'In funzione'},
-            { plant_id: '1', name: 'Machinery 2' , type: 'Type 2', status: 'In funzione'},
 
         ]
     }
