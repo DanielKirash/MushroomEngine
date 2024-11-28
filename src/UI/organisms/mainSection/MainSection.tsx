@@ -34,7 +34,7 @@ const MainSection = ({data} : MainProps) => {
             </Modal>
             <div className='plantContainer'>
             {impianti && impianti.map( (impianto: PlantType) => (
-                <div onClick={()=>handleCardClick(impianto)}>
+                <div key={impianto.id} onClick={()=>handleCardClick(impianto)}>
                     <PlantCard {...impianto}/>
                 </div>
                 ))} 

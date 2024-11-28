@@ -3,14 +3,14 @@
     width: 30px;
 }
 
-.green-light    {
+.light.green-light    {
     color:var(--success);
 }
 
-.red-light  {
+.light.red-light  {
     color:var(--fatal);
 }
 
-.orange-light   {
+.light.orange-light   {
     color: var(--warning);
 }

@@ -1,8 +1,10 @@
 import { PlantType } from "../../../../types/PlantType";
 import MachinaryCard from "../../machinaryCard/MarchinaryCard";
 import './modalcontentmachinary.css';
+import { checkStatus } from "../../../../services/utils";
 
 const ModalContentMachinary = (plant: PlantType) => {
+    
     return (
         <div className="modal-content-wrapper">
             <header className="modal-header">
@@ -17,7 +19,7 @@ const ModalContentMachinary = (plant: PlantType) => {
                     </h2>
                     <h2 className="info-item">
                         <span className="label">Stato:</span>
-                        <span className="status-badge">{plant.status}</span>
+                        <span className={"status-badge " + checkStatus(plant)}>{checkStatus(plant).toUpperCase()}</span>
                     </h2>
                 </div>
             </header>

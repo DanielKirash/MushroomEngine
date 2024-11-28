@@ -45,8 +45,6 @@
 }
 
 .status-badge {
-    background-color: #ebf8ff;
-    color: #2b6cb0;
     padding: 4px 12px;
     border-radius: 16px;
     font-size: 16px;
@@ -77,3 +75,6 @@
     overflow: auto;
 }
 
+.online {background-color: rgba(0, 255, 42, 0.2)}
+.offline{background-color: rgba(255, 0, 0, 0.2)}
+.warning{background-color: rgba(255, 136, 0, 0.2)}
