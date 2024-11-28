@@ -24,9 +24,9 @@ const ModalContentMachinary = (plant: PlantType) => {
             <section className="machinery-section">
                 <h1 className="section-title">Macchinari</h1>
                 <div className="machinaryContainer">
-                    {plant.machinary?.map((machinaryItem, index) => (
+                    {plant.macchinari?.map((machinaryItem, index) => (
                         <div key={index} className="machinary">
-                            <MachinaryCard machinaryItem={machinaryItem} />
+                            <MachinaryCard {...machinaryItem} />
                         </div>
                     ))}
                 </div>

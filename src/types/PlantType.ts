@@ -6,5 +6,5 @@ export type PlantType = {
     location?: string;
     description?: string;
     status?: string;
-    machinary?: MachinaryType[];
+    macchinari?: MachinaryType[];
 }

@@ -3,7 +3,7 @@ import { MachinaryType } from '../../../types/MachinaryType';
 import ButtonCrud from '../../atoms/buttons/ButtonCrud';
 import './machinarycard.css';
 
-const MachinaryCard = ({ machinaryItem }: { machinaryItem: MachinaryType }) => {
+const MachinaryCard = ( machinaryItem : MachinaryType ) => {
     return (
         <div className="smallMachinaryCardContainer">
             <div className="smallMachinaryInfo">

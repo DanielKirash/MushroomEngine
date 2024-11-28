@@ -10,12 +10,12 @@ export type DashboardProps = {
 const Dashboard = (setIsAuthenticated: DashboardProps) => {
   async function fetchData(){
 
-    const response = await fetch('./data/data.json');
+    const response = await fetch('http://127.0.0.1:8000/impianti');
     const data = await response.json();
   
     localStorage.setItem('impianti', JSON.stringify(data));
   
-    return data;
+    setData(data);
   }
   const [data, setData] = useState<any>(null)
   useEffect(()=>{
