@@ -7,4 +7,8 @@ export type PlantType = {
     description?: string;
     status?: string;
     macchinari?: MachinaryType[];
+    modifyFunction?: () => void;
+    deleteFunction?: () => void;
+    editMode?: boolean;
+    setEditMode?: React.Dispatch<React.SetStateAction<boolean>>;
 }

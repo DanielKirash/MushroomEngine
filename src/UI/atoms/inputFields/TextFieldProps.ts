@@ -7,6 +7,7 @@ export type TextFieldProps = {
     placeholder?: string;
     error?: string;
     addClass?:string;
+    value?: string;
   };
 
   

@@ -5,6 +5,7 @@ import Modal from '../modal/Modal';
 import './plantcard.css';
 
 const PlantCard = (plant: PlantType) => {
+
     
 
     return (        
@@ -20,8 +21,8 @@ const PlantCard = (plant: PlantType) => {
                 </p>
             </div>
             <div className="plantButton">
-                <ButtonCrud funzioneBtn='modifica' testo='MODIFICA'/>
-                <ButtonCrud funzioneBtn='elimina' testo='ELIMINA'/>
+                <ButtonCrud funzioneBtn='modifica' testo='MODIFICA' onClick={plant.modifyFunction} />
+                <ButtonCrud funzioneBtn='elimina' testo='ELIMINA' onClick={plant.deleteFunction}/>
             </div>
         </div>
     );
