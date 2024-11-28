@@ -9,7 +9,7 @@ const MachinaryCard = ( machinaryItem : MachinaryType ) => {
             <div className="smallMachinaryInfo">
                 <div className="smallMachinaryName">Nome: {machinaryItem.name}</div>
                 <div className="smallMachinaryType">Tipo: {machinaryItem.type}</div>
-                <div className="smallMachinaryStatus">Status: {machinaryItem.status}</div>
+                <div className={"smallMachinaryStatus " + machinaryItem.status?.toLowerCase()}>Status: {machinaryItem.status}</div>
                 <div className='crudButtons'>
                     <ButtonCrud funzioneBtn='modificaMachinary' testo='MODIFICA'/>
                     <ButtonCrud funzioneBtn='eliminaMachinary' testo='ELIMINA'/>
