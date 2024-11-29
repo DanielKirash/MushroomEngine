@@ -3,6 +3,9 @@ import Header from "../UI/organisms/header/Header";
 import Main from "../UI/organisms/main/Main";
 import '../pages/layout.css'
 import ButtonCrud from "../UI/atoms/buttons/ButtonCrud";
+import AddNewPlant from "../UI/molecules/addPlant/AddNewPlant";
+import { PlantProvider } from "../contexts/PlantContext";
+
 
 export type DashboardProps = {
   setIsAuthenticated: (value: boolean) => void;
@@ -18,21 +21,27 @@ const Dashboard = (setIsAuthenticated: DashboardProps) => {
   
     setData(data);
   }
-  const [data, setData] = useState<any>(null)
+  const [data, setData] = useState<any>(null);
+  const [openCard , setOpenCard] = useState<boolean>(false);
   useEffect(()=>{
     fetchData()
   },[])
   
   const handleAdd = () => {
-    console.log("ADD");
+    setOpenCard(!openCard)
 }
 
     return (
-      <div className="dashboard-layout">
-        <Header {...setIsAuthenticated}/>
-        <Main/>
-        <ButtonCrud funzioneBtn="aggiungi" testo="+" onClick={handleAdd}/>
-      </div>
+      <PlantProvider>
+        <div className="dashboard-layout">
+          <Header {...setIsAuthenticated}/>
+          <Main/>
+            {openCard? 
+            <AddNewPlant onClick={handleAdd} openCard={openCard}/> :
+            <ButtonCrud funzioneBtn="aggiungi" testo="+" onClick={handleAdd}/> 
+            }
+        </div>
+      </PlantProvider>
     )
   };
   
