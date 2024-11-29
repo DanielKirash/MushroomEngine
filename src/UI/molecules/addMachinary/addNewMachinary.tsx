@@ -1,13 +1,13 @@
 import React , { useState } from 'react';
 import ButtonCrud from '../../atoms/buttons/ButtonCrud';
 import InputField from '../../atoms/inputFields/InputText';
-import './addNewPlant.css'
+import './addNewMachinary.css'
 import { PlantType } from '../../../types/PlantType';
 import { usePlants } from '../../../contexts/PlantContext';
 import { MachinaryType } from '../../../types/MachinaryType';
 
-const AddNewPlant = ({onClick , openCard} : {onClick : ()=> void , openCard:boolean}) =>   {
-    const {addPlant} = usePlants();
+const AddNewMachinary = ({onClick , openCard} : {onClick : ()=> void , openCard:boolean}) =>   {
+    const {addMachinary} = usePlants();
 
     const [newMachinary, setNewMachinary] = useState<MachinaryType>({
         name: "",
@@ -22,9 +22,13 @@ const AddNewPlant = ({onClick , openCard} : {onClick : ()=> void , openCard:bool
         }));
     };
 
-    const handleSave = (newPlant : PlantType) =>{
-        console.log(newPlant)
-        addPlant(newPlant);
+    const handleSave = (machinary : MachinaryType) =>{
+        if(machinary.plant_id){
+            addMachinary(machinary.plant_id, machinary)
+        }else{
+            console.log('errore')
+        }
+        
         onClick()
     }
     
@@ -43,4 +47,4 @@ const AddNewPlant = ({onClick , openCard} : {onClick : ()=> void , openCard:bool
     )
 }
 
-export default AddNewPlant;
+export default AddNewMachinary;
