@@ -226,6 +226,125 @@
     margin-right: 8px;
 }
 
+.machinery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.add-machinery-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: #38a169;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-machinery-button:hover {
+    background-color: #2f855a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-machinery-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-machinery-button svg {
+    font-size: 16px;
+    transition: transform 0.2s ease;
+}
+
+.add-machinery-button:hover svg {
+    transform: rotate(90deg);
+}
+
 .online {background-color: rgba(0, 255, 42, 0.2)}
 .offline{background-color: rgba(255, 0, 0, 0.2)}
 .warning{background-color: rgba(255, 136, 0, 0.2)}
+
+
+@media screen and (max-width: 768px) {
+    .modal-content-wrapper {
+        padding: 16px;
+    }
+
+    .modal-header {
+        margin-bottom: 24px;
+    }
+
+    .modal-title {
+        font-size: 24px;
+    }
+
+    .info-item {
+        font-size: 14px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .machinaryContainer {
+        gap: 16px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .machinery-header {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+
+    .add-machinery-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .edit-mode-input {
+        font-size: 20px;
+    }
+
+    .edit-mode-footer {
+        flex-direction: column-reverse;
+        gap: 8px;
+    }
+
+    .icon-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .modal-title {
+        font-size: 20px;
+    }
+
+    .status-badge {
+        font-size: 14px;
+        padding: 4px 8px;
+    }
+
+    .edit-mode-textarea {
+        min-height: 80px;
+    }
+
+    .machinaryContainer {
+        gap: 12px;
+    }
+}

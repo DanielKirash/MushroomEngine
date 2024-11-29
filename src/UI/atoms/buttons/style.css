@@ -32,12 +32,12 @@ button:hover {
     padding:10px 20px;
     box-shadow: 0 5px 15px rgba(165, 222, 252, 0.150);
     font-size: 35px;
-    position:absolute;
+    position:fixed;
     bottom: 0px;
     left: 0px;
     margin-bottom: 20px;
     margin-left: 20px;
-    border-radius: 25px;
+    border-radius: 32px;
     text-align: center;
     vertical-align: middle;
 
