@@ -64,6 +64,9 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 250px;
     gap: 30px;
     justify-content: center;
     align-items: center;

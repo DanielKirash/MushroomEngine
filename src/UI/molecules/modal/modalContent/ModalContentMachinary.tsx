@@ -7,10 +7,12 @@ import { checkStatus } from "../../../../utils/utils";
 import { FaPlus, FaSave, FaTimes } from "react-icons/fa";
 import { usePlants } from "../../../../contexts/PlantContext";
 import toast from "react-hot-toast";
+import AddNewMachinary from "../../addMachinary/addNewMachinary";
 
 const ModalContentMachinary = (plant: PlantType) => {
 
     const { updatePlant, selectedPlant } = usePlants();
+    const [ openCard, setOpenCard ] = useState<boolean>();
 
     
 
@@ -48,7 +50,7 @@ const ModalContentMachinary = (plant: PlantType) => {
     };
 
     const handleAddMachinary = () => {
-        
+        setOpenCard(!openCard);
     }
 
     const handleCancel = () => {
@@ -123,9 +125,13 @@ const ModalContentMachinary = (plant: PlantType) => {
                 <section className="machinery-section">
                     <div className="machinery-header">
                         <h1 className="section-title">Macchinari</h1>
-                        <button className="add-machinery-button" onClick={handleAddMachinary}>
+                        {openCard ? 
+                        (<AddNewMachinary onClick={handleAddMachinary} openCard={openCard} setShowModal={plant.setShowModal}/>)
+                        :
+                        (<button className="add-machinery-button" onClick={handleAddMachinary}>
                             <FaPlus /> Aggiungi Macchinario
-                        </button>
+                        </button>)
+                        }   
                     </div>
                     <div className="machinaryContainer">
                         {selectedPlant.macchinari?.map((machinaryItem, index) => (
