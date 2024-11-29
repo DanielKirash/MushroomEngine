@@ -4,4 +4,5 @@ export type MachinaryType = {
     name?: string,
     type?: string, 
     status?:string
+    setShowModal?: ((value: boolean) => void) | undefined;
 }

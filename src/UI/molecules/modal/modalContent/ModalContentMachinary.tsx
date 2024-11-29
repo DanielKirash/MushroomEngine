@@ -10,25 +10,27 @@ import toast from "react-hot-toast";
 
 const ModalContentMachinary = (plant: PlantType) => {
 
-    const { updatePlant } = usePlants();
+    const { updatePlant, selectedPlant } = usePlants();
+
+    
 
     const [editedPlant, setEditedPlant] = useState({
-        _id: plant?._id,
-        name: plant?.name,
-        location: plant?.location,
-        description: plant?.description,
+        _id: selectedPlant?._id,
+        name: selectedPlant?.name,
+        location: selectedPlant?.location,
+        description: selectedPlant?.description,
     });
 
     useEffect(() => {
-        if (plant) {
+        if (selectedPlant) {
             setEditedPlant({
-                _id: plant._id,
-                name: plant.name,
-                location: plant.location,
-                description: plant.description,
+                _id: selectedPlant._id,
+                name: selectedPlant.name,
+                location: selectedPlant.location,
+                description: selectedPlant.description,
             });
         }
-    }, [plant]);
+    }, [selectedPlant]);
 
     const handleChange = (field: string, value: string) => {
         setEditedPlant(prev => ({
@@ -38,7 +40,7 @@ const ModalContentMachinary = (plant: PlantType) => {
     };
 
     const handleSave = async () => {
-        await updatePlant(editedPlant);
+        const response = await updatePlant(editedPlant);
         console.log(editedPlant)
         toast.success('Impianto modificato con successo');
         plant.handleClose && plant.handleClose();
@@ -47,13 +49,9 @@ const ModalContentMachinary = (plant: PlantType) => {
     };
 
     const handleCancel = () => {
-        setEditedPlant({
-            _id: plant._id,
-            name: plant.name,
-            location: plant.location,
-            description: plant.description,
-        });
+        plant.setShowModal && plant.setShowModal(false)
     };
+    
     return (
         plant.editMode ? (
             <div className="edit-mode-container">
@@ -106,12 +104,12 @@ const ModalContentMachinary = (plant: PlantType) => {
                     <header className="modal-header">
                         <h1 className="modal-title">
                             <span className="label">Impianto:</span>
-                            <span className="value"> {plant.name}</span>
+                            <span className="value"> {selectedPlant.name}</span>
                         </h1>
                         <div className="modal-info">
                             <h2 className="info-item">
                                 <span className="labelDesc">Descrizione:</span>
-                                <span className="value">{plant.description}</span>
+                                <span className="value">{selectedPlant.description}</span>
                             </h2>
                             <h2 className="info-item">
                                 <span className="label">Stato:</span>
@@ -122,9 +120,9 @@ const ModalContentMachinary = (plant: PlantType) => {
                     <section className="machinery-section">
                         <h1 className="section-title">Macchinari</h1>
                         <div className="machinaryContainer">
-                            {plant.macchinari?.map((machinaryItem, index) => (
+                            {selectedPlant.macchinari?.map((machinaryItem, index) => (
                                 <div key={index} className="machinary">
-                                    <MachinaryCard {...machinaryItem} />
+                                    <MachinaryCard {...machinaryItem} setShowModal={plant.setShowModal}/>
                                 </div>
                             ))}
                         </div>

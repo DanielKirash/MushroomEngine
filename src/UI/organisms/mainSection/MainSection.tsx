@@ -54,7 +54,7 @@ const MainSection = ({showModal , setShowModal} : ModalProps) => {
             <BarraRicerca />
             <Modal show={showModal} handleClose={handleCloseModal}>
                 <ModalContentMachinary 
-                    {...selectedPlant} 
+                    setShowModal={setShowModal}
                     editMode={editMode} 
                     setEditMode={setEditMode} 
                     handleClose={handleCloseModal} 
@@ -67,8 +67,8 @@ const MainSection = ({showModal , setShowModal} : ModalProps) => {
                             <PlantCard
                                 {...impianto}
                                 deleteFunction={(e: React.MouseEvent) => {
-                                    e.stopPropagation(); 
-                                    handleDelete(impianto); 
+                                e.stopPropagation(); 
+                                handleDelete(impianto); 
                                 }}
                                 modifyFunction={handleModify}
                             />

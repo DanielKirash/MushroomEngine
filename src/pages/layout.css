@@ -20,7 +20,7 @@ html	{
 .dashboard-layout	{
     display: flex;
 	flex-direction: column;
-    min-height: 90%;
+    min-height: 100vh;
 	background-color: var(--background);
 	padding: 10px;
 }
