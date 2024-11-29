@@ -99,7 +99,8 @@ export const PlantProvider = ({ children }: { children: ReactNode }) => {
 const addPlant = async (plant: PlantType) => {
   try{
     const newPlant = await postPlant(plant);
-    setImpianti((prevImpianti) => [...prevImpianti, newPlant]);
+    plant._id = newPlant._id
+    setImpianti((prevImpianti) => [...prevImpianti, plant])
   }catch(error){
     console.error("Error adding plant:", error);
   }

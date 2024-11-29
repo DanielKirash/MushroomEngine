@@ -40,8 +40,7 @@ const ModalContentMachinary = (plant: PlantType) => {
     };
 
     const handleSave = async () => {
-        const response = await updatePlant(editedPlant);
-        console.log(editedPlant)
+        await updatePlant(editedPlant);
         toast.success('Impianto modificato con successo');
         plant.handleClose && plant.handleClose();
         plant.setEditMode && plant.setEditMode(false);
@@ -51,7 +50,7 @@ const ModalContentMachinary = (plant: PlantType) => {
     const handleCancel = () => {
         plant.setShowModal && plant.setShowModal(false)
     };
-    
+
     return (
         plant.editMode ? (
             <div className="edit-mode-container">
