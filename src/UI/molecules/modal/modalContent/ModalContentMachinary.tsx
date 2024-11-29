@@ -126,7 +126,7 @@ const ModalContentMachinary = (plant: PlantType) => {
                     <div className="machinery-header">
                         <h1 className="section-title">Macchinari</h1>
                         {openCard ? 
-                        (<AddNewMachinary onClick={handleAddMachinary} openCard={openCard}/>)
+                        (<AddNewMachinary onClick={handleAddMachinary} openCard={openCard} setShowModal={plant.setShowModal}/>)
                         :
                         (<button className="add-machinery-button" onClick={handleAddMachinary}>
                             <FaPlus /> Aggiungi Macchinario

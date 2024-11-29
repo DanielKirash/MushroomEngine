@@ -149,20 +149,15 @@ const deleteMachinary = async ( machinary: MachinaryType): Promise<boolean> => {
 
 const addMachinary = async (plantId: string, machinary: MachinaryType) => {
   try {
+    //id del macchinario
+    console.log('MACCHINARIO NUOVO', machinary)
     const newMachinary = await postMachinary(plantId, machinary);
-    setImpianti((prevImpianti) => {
-      return prevImpianti.map((impianto) => {
-        if (impianto._id === plantId) {
-          return {
-            ...impianto,
-            macchinari: [...(impianto.macchinari ?? []), newMachinary],
-          };
-        }
-        return impianto;
-      });
-    });
 
-    setImpianti(prev => [...prev]);
+    const data = await fetchPlants();
+    if (data) {
+      setImpianti(data);
+    }
+
   } catch (error) {
     console.error("Errore nell'aggiunta di macchinari:", error);
   }
