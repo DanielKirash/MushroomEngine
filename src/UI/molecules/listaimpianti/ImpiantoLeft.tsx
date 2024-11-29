@@ -1,8 +1,14 @@
+import { usePlants } from '../../../contexts/PlantContext';
 import { PlantType } from '../../../types/PlantType';
 import Light from '../../atoms/luceFunzionamento/Light';
+import { ModalProps } from '../../organisms/mainSection/MainSection';
 import './style.css'
 
-const ImpiantoLeft = (plant : PlantType) =>{
+interface ImpiantoLeftProps extends PlantType, ModalProps{
+
+}
+
+const ImpiantoLeft = (plant : ImpiantoLeftProps) =>{
      function checkStatus(){
         let coloreStatus = "green";
         plant.macchinari?.map((macchinario)=>{
@@ -12,10 +18,16 @@ const ImpiantoLeft = (plant : PlantType) =>{
     )
         return coloreStatus;
     };
+    const {selectedPlant, setSelectedPlant} = usePlants();
+    
+    const handleItemClick = (plant: ImpiantoLeftProps) => {
+        setSelectedPlant(plant);
+        plant.setShowModal(true);
+    };
     return(
         <li className='item-list'>
             <span className='light-list'><Light colore={checkStatus()}/></span>
-            <div className='nome-impianto-list'>{plant.name}</div>
+            <div className='nome-impianto-list' onClick={()=>handleItemClick(plant)}>{plant.name}</div>
         </li>
     )
 

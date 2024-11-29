@@ -1,12 +1,12 @@
 import './sidebar.css'
 import ListaImpianti from '../listaImpianti/ListaImpianti';
-import { MainProps } from '../../../types/MainProps';
+import { ModalProps } from '../mainSection/MainSection';
 
-const Sidebar = () => {
+
+const Sidebar = ({showModal , setShowModal} : ModalProps) => {
     return (
-        <nav className="sidebar">
-            
-            <ListaImpianti />
+        <nav className="sidebar">  
+            <ListaImpianti showModal={showModal} setShowModal={setShowModal}/>
         </nav>
     )
   };

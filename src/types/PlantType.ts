@@ -12,4 +12,6 @@ export type PlantType = {
     editMode?: boolean;
     setEditMode?: React.Dispatch<React.SetStateAction<boolean>>;
     handleClose?: () => void;
+    handleItemClick?:(plant : PlantType) => void;
+    
 }
