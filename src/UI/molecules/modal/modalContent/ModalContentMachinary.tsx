@@ -39,6 +39,7 @@ const ModalContentMachinary = (plant: PlantType) => {
 
     const handleSave = async () => {
         await updatePlant(editedPlant);
+        console.log(editedPlant)
         toast.success('Impianto modificato con successo');
         plant.handleClose && plant.handleClose();
         plant.setEditMode && plant.setEditMode(false);

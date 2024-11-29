@@ -2,7 +2,7 @@ import { PlantType } from "../types/PlantType"
 
 
 export const fetchPlants = async () => {
-    const impiantiUrl = 'http://127.0.0.1:8000/impianti'
+    const impiantiUrl = 'http://127.0.0.1:8000/impianti_con_macchinari'
     const response = await fetch(impiantiUrl, {
         method: 'GET',
         headers: {

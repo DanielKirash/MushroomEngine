@@ -3,7 +3,7 @@ import { MachinaryType } from "../types/MachinaryType";
 
 
 export const putMachinary = async (machinary: MachinaryType) => {
-    const macchinariUrl = `http://127.0.0.1:8000/macchinari/${machinary._id}`;
+    const macchinariUrl = `http://127.0.0.1:8000/machinery/${machinary._id}`;
     const response = await fetch(macchinariUrl, {
         method: 'PUT',
         headers: {
@@ -17,7 +17,7 @@ export const putMachinary = async (machinary: MachinaryType) => {
 }
 
 export const dropMachinary = async (machinary: MachinaryType) => {
-    const macchinariUrl = `http://127.0.0.1:8000/macchinari/${machinary._id}`;
+    const macchinariUrl = `http://127.0.0.1:8000/machinery/${machinary._id}`;
     const response = await fetch(macchinariUrl, {
         method: 'DELETE',
         headers: {
@@ -30,7 +30,7 @@ export const dropMachinary = async (machinary: MachinaryType) => {
 }
 
 export const postMachinary = async (plantId: string, machinary: MachinaryType) => {
-    const macchinariUrl = `http://127.0.0.1:8000/impianti/${plantId}/macchinari`;
+    const macchinariUrl = `http://127.0.0.1:8000/impianti/${plantId}/machinery`;
     const response = await fetch(macchinariUrl, {
         method: 'POST',
         headers: {
