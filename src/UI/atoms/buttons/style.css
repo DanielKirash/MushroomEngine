@@ -21,10 +21,26 @@ button:hover {
 }
 
 .elimina {
-    background: #FC8181;
+    background: rgb(252, 129, 129);
     padding: 10px 20px;
     box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
     font-size: 14px;
+}
+
+.aggiungi   {
+    background: #4DA8F3;
+    padding:10px 20px;
+    box-shadow: 0 5px 15px rgba(165, 222, 252, 0.150);
+    font-size: 35px;
+    position:absolute;
+    bottom: 0px;
+    left: 0px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    border-radius: 25px;
+    text-align: center;
+    vertical-align: middle;
+
 }
 
 .modificaMachinary {
