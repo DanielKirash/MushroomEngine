@@ -2,8 +2,8 @@ import { MachinaryType } from "../types/MachinaryType";
 
 
 
-export const putPlants = async (plantId: string, machinary: MachinaryType) => {
-    const macchinariUrl = `http://127.0.0.1:8000/impianti/${plantId}/macchinari`;
+export const putMachinary = async (machinary: MachinaryType) => {
+    const macchinariUrl = `http://127.0.0.1:8000/macchinari/${machinary._id}`;
     const response = await fetch(macchinariUrl, {
         method: 'PUT',
         headers: {
@@ -16,7 +16,7 @@ export const putPlants = async (plantId: string, machinary: MachinaryType) => {
     return data;
 }
 
-export const dropPlant = async (machinary: MachinaryType) => {
+export const dropMachinary = async (machinary: MachinaryType) => {
     const macchinariUrl = `http://127.0.0.1:8000/macchinari/${machinary._id}`;
     const response = await fetch(macchinariUrl, {
         method: 'DELETE',
@@ -29,14 +29,14 @@ export const dropPlant = async (machinary: MachinaryType) => {
     return data;
 }
 
-export const postPlant = async (plant: MachinaryType) => {
-    const macchinariUrl = 'http://127.0.0.1:8000/macchinari';
+export const postMachinary = async (plantId: string, machinary: MachinaryType) => {
+    const macchinariUrl = `http://127.0.0.1:8000/impianti/${plantId}/macchinari`;
     const response = await fetch(macchinariUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(plant)
+        body: JSON.stringify(machinary)
     });
     const data = await response.json();
     return data;

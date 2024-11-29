@@ -2,6 +2,8 @@
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { PlantType } from '../types/PlantType'; 
 import { dropPlant, fetchPlants, postPlant, putPlants } from '../services/plantService';
+import { dropMachinary, postMachinary, putMachinary } from '../services/machinaryService';
+import { MachinaryType } from '../types/MachinaryType';
 
 
 interface PlantContextProps {
@@ -10,6 +12,11 @@ interface PlantContextProps {
   updatePlant: (plant: PlantType) => void;
   deletePlant: (plant: PlantType) => Promise<boolean>;
   addPlant: (plant: PlantType) => void;
+  // CRUD PER I MACCHINARI
+  updateMachinary: (plantId: string, machinary: MachinaryType) => void;
+  deleteMachinary: (plantId: string, machinary: MachinaryType) => Promise<boolean>;
+  addMachinary: (plantId: string, machinary: MachinaryType) => void;
+
 }
 
 const PlantContext = createContext<PlantContextProps | null>(null);
@@ -92,9 +99,97 @@ const addPlant = async (plant: PlantType) => {
   }
 };
 
+// CRUD FUNCTIONS FOR machinary
+
+
+
+// FUNZIONE PER AGGIORNARE I DATI (UPDATE)
+const updateMachinary = async (plantId: string, machinary: MachinaryType) => {
+  try {
+    const updatedmachinary = await putMachinary(machinary);
+
+    // Update the local state with the updated data by mapping over the existing ones
+    setImpianti((prevImpianti) => {
+      return prevImpianti.map((impianto) => {
+        if (impianto._id === plantId) {
+          return {
+            ...impianto,
+            machineries: (impianto.macchinari ?? []).map((item) => {
+              if (item._id === machinary._id) {
+                return { ...item, ...updatedmachinary };
+              } else {
+                return item;
+              }
+            }),
+          };
+        } else {
+          return impianto;
+        }
+      });
+    });
+  } catch (error) {
+    console.error("Error updating machinary:", error);
+  }
+};
+
+// FUNZIONE PER ELIMINARE I DATI (DELETE)
+const deleteMachinary = async (plantId: string, machinary: MachinaryType): Promise<boolean> => {
+  if (!machinary._id) {
+    console.error("Cannot delete machinary: Invalid or missing ID");
+    return false;
+  }
+
+  try {
+    const response = await dropMachinary(machinary);
+    if (response.message === "Eliminato con successo") {
+      setImpianti((prevImpianti) => {
+        return prevImpianti.map((impianto) => {
+          if (impianto._id === plantId) {
+            return {
+              ...impianto,
+              machineries: (impianto.macchinari ?? []).filter((item) => item._id !== machinary._id),
+            };
+          } else {
+            return impianto;
+          }
+        });
+      });
+
+      return true;
+    } else {
+      console.error("Errore durante l'eliminazione del macchinario");
+      return false;
+    }
+  } catch (error) {
+    console.error("Erreo durante l'eliminazione:", error);
+    return false;
+  }
+};
+
+// FUNZIONE PER AGGIUNGERE DATI (CREATE)
+const addMachinary = async (plantId: string, machinary: MachinaryType) => {
+  try {
+    const newmachinary = await postMachinary(plantId, machinary);
+    setImpianti((prevImpianti) => {
+      return prevImpianti.map((impianto) => {
+        if (impianto._id === plantId) {
+          return {
+            ...impianto,
+            machineries: [...(impianto.macchinari ?? []), newmachinary],
+          };
+        } else {
+          return impianto;
+        }
+      });
+    });
+  } catch (error) {
+    console.error("Errore nell'aggiunta di macchianri:", error);
+  }
+};
+
 
   return (
-    <PlantContext.Provider value={{ impianti, setImpianti, updatePlant, deletePlant, addPlant }}>
+    <PlantContext.Provider value={{ impianti, setImpianti, updatePlant, deletePlant, addPlant, addMachinary, deleteMachinary, updateMachinary }}>
       {children}
     </PlantContext.Provider>
   );
