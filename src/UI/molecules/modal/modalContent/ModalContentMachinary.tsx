@@ -118,7 +118,7 @@ const ModalContentMachinary = (plant: PlantType) => {
                             </h2>
                             <h2 className="info-item">
                                 <span className="label">Stato:</span>
-                                <span className={"status-badge " + checkStatus(plant)}>{checkStatus(plant).toUpperCase()}</span>
+                                <span className={"status-badge " + checkStatus(selectedPlant)}>{checkStatus(selectedPlant).toUpperCase()}</span>
                             </h2>
                         </div>
                 </header>
