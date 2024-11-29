@@ -4,9 +4,8 @@ import Light from '../../atoms/luceFunzionamento/Light';
 import { ModalProps } from '../../organisms/mainSection/MainSection';
 import './style.css'
 
-interface ImpiantoLeftProps extends PlantType, ModalProps{
 
-}
+type ImpiantoLeftProps = PlantType & ModalProps;
 
 const ImpiantoLeft = (plant : ImpiantoLeftProps) =>{
      function checkStatus(){
