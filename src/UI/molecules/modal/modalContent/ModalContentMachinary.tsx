@@ -4,7 +4,7 @@ import InputField from "../../../atoms/inputFields/InputText";
 import MachinaryCard from "../../machinaryCard/MarchinaryCard";
 import './modalcontentmachinary.css';
 import { checkStatus } from "../../../../utils/utils";
-import { FaSave, FaTimes } from "react-icons/fa";
+import { FaPlus, FaSave, FaTimes } from "react-icons/fa";
 import { usePlants } from "../../../../contexts/PlantContext";
 import toast from "react-hot-toast";
 
@@ -46,6 +46,10 @@ const ModalContentMachinary = (plant: PlantType) => {
         plant.setEditMode && plant.setEditMode(false);
 
     };
+
+    const handleAddMachinary = () => {
+        
+    }
 
     const handleCancel = () => {
         plant.setShowModal && plant.setShowModal(false)
@@ -115,19 +119,25 @@ const ModalContentMachinary = (plant: PlantType) => {
                                 <span className={"status-badge " + checkStatus(plant)}>{checkStatus(plant).toUpperCase()}</span>
                             </h2>
                         </div>
-                    </header>
-                    <section className="machinery-section">
+                </header>
+                <section className="machinery-section">
+                    <div className="machinery-header">
                         <h1 className="section-title">Macchinari</h1>
-                        <div className="machinaryContainer">
-                            {selectedPlant.macchinari?.map((machinaryItem, index) => (
-                                <div key={index} className="machinary">
-                                    <MachinaryCard {...machinaryItem} setShowModal={plant.setShowModal}/>
-                                </div>
-                            ))}
-                        </div>
-                    </section>
-                </div>
-            ))
+                        <button className="add-machinery-button" onClick={handleAddMachinary}>
+                            <FaPlus /> Aggiungi Macchinario
+                        </button>
+                    </div>
+                    <div className="machinaryContainer">
+                        {selectedPlant.macchinari?.map((machinaryItem, index) => (
+                            <div key={index} className="machinary">
+                                <MachinaryCard {...machinaryItem} setShowModal={plant.setShowModal}/>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            </div>
+        )
+    );
 };
 
 export default ModalContentMachinary;

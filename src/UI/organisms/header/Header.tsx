@@ -18,7 +18,6 @@ const Header = (setIsAuthenticated: DashboardProps) => {
         <header id="header">
             <Logo className="logo-small" />
             <div className="box-intestazione">
-                <img src={'scrittaLogoFungo.png'} alt="Intestazione Azienda" />
                 <p>Benvenuto, Utente X</p>
             </div>
             <div className="logout-box" onClick={handleLogOut}>
