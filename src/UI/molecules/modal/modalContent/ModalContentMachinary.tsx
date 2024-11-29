@@ -6,6 +6,7 @@ import './modalcontentmachinary.css';
 import { checkStatus } from "../../../../utils/utils";
 import { FaSave, FaTimes } from "react-icons/fa";
 import { usePlants } from "../../../../contexts/PlantContext";
+import toast from "react-hot-toast";
 
 const ModalContentMachinary = (plant: PlantType) => {
 
@@ -38,8 +39,10 @@ const ModalContentMachinary = (plant: PlantType) => {
 
     const handleSave = async () => {
         await updatePlant(editedPlant);
+        toast.success('Impianto modificato con successo');
         plant.handleClose && plant.handleClose();
         plant.setEditMode && plant.setEditMode(false);
+
     };
 
     const handleCancel = () => {

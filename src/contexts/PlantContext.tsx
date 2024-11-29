@@ -1,13 +1,14 @@
 
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { PlantType } from '../types/PlantType'; 
-import { fetchPlants, putPlants } from '../services/plantService';
+import { dropPlant, fetchPlants, putPlants } from '../services/plantService';
 
 
 interface PlantContextProps {
   impianti: PlantType[];
   setImpianti: React.Dispatch<React.SetStateAction<PlantType[]>>;
   updatePlant: (plant: PlantType) => void;
+  deletePlant: (plant: PlantType) => Promise<boolean>;
 }
 
 const PlantContext = createContext<PlantContextProps | null>(null);
@@ -50,8 +51,37 @@ export const PlantProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  //FUNZIONE PER ELIMINARE I DATI (DELETE)
+
+  const deletePlant = async (plant: PlantType): Promise<boolean> => {
+
+    if (!plant._id) {
+      console.error("Cannot delete plant: Invalid or missing ID");
+      return false;
+    }
+
+    try {
+
+      const response = await dropPlant(plant);
+      if (response.message === "Eliminato con successo") {
+        console.log("Plant deleted successfully");
+        setImpianti((prevImpianti) => 
+          prevImpianti.filter((impianto) => impianto._id !== plant._id)
+        );
+        
+        return true; 
+      } else {
+        console.error("Plant deletion failed on server");
+        return false;
+      }
+    } catch (error) {
+      console.error("Error during plant deletion:", error);
+      return false;
+    }
+  };
+
   return (
-    <PlantContext.Provider value={{ impianti, setImpianti, updatePlant }}>
+    <PlantContext.Provider value={{ impianti, setImpianti, updatePlant, deletePlant }}>
       {children}
     </PlantContext.Provider>
   );

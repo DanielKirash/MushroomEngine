@@ -5,6 +5,7 @@ import { MdOutlinePassword } from "react-icons/md"
 import './login-card.css';
 import { useState } from 'react';
 import { login } from '../../../services/authService';
+import toast from 'react-hot-toast';
 
 
 
@@ -32,10 +33,10 @@ const LoginCard = () => {
                 localStorage.setItem('sessionStorage', 'true');
                 window.location.href = '/dashboard';
             } else {
-                alert('Credenziali errate');
+                toast.error('Credenziali errate');
             }
         } else {
-            alert('Credenziali errate');
+            toast.error('Errore durante il login');
         }
     }
 

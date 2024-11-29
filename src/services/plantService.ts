@@ -1,9 +1,8 @@
 import { PlantType } from "../types/PlantType"
 
-const url = 'http://127.0.0.1:8000'
-const impiantiUrl = url + '/impianti'
 
 export const fetchPlants = async () => {
+    const impiantiUrl = 'http://127.0.0.1:8000/impianti'
     const response = await fetch(impiantiUrl, {
         method: 'GET',
         headers: {
@@ -24,6 +23,19 @@ export const putPlants = async (plant: PlantType) => {
         body: JSON.stringify(plant)
     });
 
+    const data = await response.json();
+    return data;
+}
+
+export const dropPlant = async (plant: PlantType) => {
+    const impiantiUrl = `http://127.0.0.1:8000/impianti/${plant._id}`;
+    const response = await fetch(impiantiUrl, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(plant)
+    });
     const data = await response.json();
     return data;
 }
