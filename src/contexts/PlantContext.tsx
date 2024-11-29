@@ -1,7 +1,7 @@
 
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { PlantType } from '../types/PlantType'; 
-import { dropPlant, fetchPlants, putPlants } from '../services/plantService';
+import { dropPlant, fetchPlants, postPlant, putPlants } from '../services/plantService';
 
 
 interface PlantContextProps {
@@ -9,6 +9,7 @@ interface PlantContextProps {
   setImpianti: React.Dispatch<React.SetStateAction<PlantType[]>>;
   updatePlant: (plant: PlantType) => void;
   deletePlant: (plant: PlantType) => Promise<boolean>;
+  addPlant: (plant: PlantType) => void;
 }
 
 const PlantContext = createContext<PlantContextProps | null>(null);
@@ -80,12 +81,25 @@ export const PlantProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+
+// FUNZIONE PER AGGIUNGERE DATI (CREATE)
+const addPlant = async (plant: PlantType) => {
+  try{
+    const newPlant = await postPlant(plant);
+    impianti.push(newPlant);
+  }catch(error){
+    console.error("Error adding plant:", error);
+  }
+};
+
+
   return (
-    <PlantContext.Provider value={{ impianti, setImpianti, updatePlant, deletePlant }}>
+    <PlantContext.Provider value={{ impianti, setImpianti, updatePlant, deletePlant, addPlant }}>
       {children}
     </PlantContext.Provider>
   );
 };
+
 
 // CUSTOM HOOK PER UTILKIZARE IL CONTESTO
 export const usePlants = () => {

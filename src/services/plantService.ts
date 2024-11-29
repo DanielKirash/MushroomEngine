@@ -39,3 +39,16 @@ export const dropPlant = async (plant: PlantType) => {
     const data = await response.json();
     return data;
 }
+
+export const postPlant = async (plant: PlantType) => {
+    const impiantiUrl = 'http://127.0.0.1:8000/impianti';
+    const response = await fetch(impiantiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(plant)
+    });
+    const data = await response.json();
+    return data;
+}
