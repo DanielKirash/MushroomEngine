@@ -8,23 +8,32 @@ import ModalContentMachinary from '../../molecules/modal/modalContent/ModalConte
 import { usePlants } from '../../../contexts/PlantContext';
 import  toast from 'react-hot-toast';
 
+export type ModalProps = {
+    showModal:boolean,
+    setShowModal: (value:boolean) => void,
+}
 
-const MainSection = () => {
-    const { impianti, deletePlant } = usePlants();
+const MainSection = ({showModal , setShowModal} : ModalProps) => {
+    const { impianti, deletePlant ,selectedPlant , setSelectedPlant } = usePlants();
 
-    const [showModal, setShowModal] = useState(false);
-    const [selectedPlant, setSelectedPlant] = useState<PlantType | null>(null);
+   
     const [editMode, setEditMode] = useState(false);
 
     const handleCloseModal = () => {
         setShowModal(false);
         setEditMode(false);
     };
-
+  
+    const handleModify = () => {
+      setEditMode(true);
+      setShowModal(true);
+    };
+  
     const handleCardClick = (plant: PlantType) => {
         setSelectedPlant(plant);
         setShowModal(true);
     };
+    
 
     const handleDelete = async (plant: PlantType) => {
         const response = await deletePlant(plant);
@@ -35,13 +44,9 @@ const MainSection = () => {
         }
     };
 
-    const handleModify = () => {
-        setEditMode(true);
-        setShowModal(true);
-    };
+    
 
     useEffect(() => {
-        console.log(impianti);
     }, [impianti]);
 
     return (

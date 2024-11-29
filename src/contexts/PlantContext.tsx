@@ -6,9 +6,14 @@ import { dropMachinary, postMachinary, putMachinary } from '../services/machinar
 import { MachinaryType } from '../types/MachinaryType';
 
 
+
 interface PlantContextProps {
   impianti: PlantType[];
   setImpianti: React.Dispatch<React.SetStateAction<PlantType[]>>;
+  //USESTATE PER IMPIANTO SELEZIONATO
+  selectedPlant : PlantType;
+  setSelectedPlant : React.Dispatch<React.SetStateAction<PlantType>>;
+  //---------------------------------
   updatePlant: (plant: PlantType) => void;
   deletePlant: (plant: PlantType) => Promise<boolean>;
   addPlant: (plant: PlantType) => void;
@@ -23,6 +28,7 @@ const PlantContext = createContext<PlantContextProps | null>(null);
 
 export const PlantProvider = ({ children }: { children: ReactNode }) => {
   const [impianti, setImpianti] = useState<PlantType[]>([]);
+  const [selectedPlant, setSelectedPlant] = useState<PlantType>({});
 
   //FUNZIONE PER FETCHARE I DATI (READ)
   useEffect(() => {
@@ -189,7 +195,7 @@ const addMachinary = async (plantId: string, machinary: MachinaryType) => {
 
 
   return (
-    <PlantContext.Provider value={{ impianti, setImpianti, updatePlant, deletePlant, addPlant, addMachinary, deleteMachinary, updateMachinary }}>
+    <PlantContext.Provider value={{ impianti, setImpianti, updatePlant, deletePlant, addPlant, addMachinary, deleteMachinary, updateMachinary ,selectedPlant, setSelectedPlant }}>
       {children}
     </PlantContext.Provider>
   );
